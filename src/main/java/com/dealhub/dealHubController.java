@@ -1,5 +1,6 @@
 package com.dealhub;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,15 +11,22 @@ import javafx.scene.image.ImageView;
 public class dealHubController {
 
     @FXML
-    ImageView loginImageView;
+    private ImageView loginImageView;
     @FXML
-    TextField userId;
+    private TextField userIdTF;
     @FXML
-    TextField pass;
+    private TextField passTF;
     @FXML
-    Button loginBt;
+    private Button loginBt;
     @FXML
-    Button createAccBt;
+    private Button createAccBt;
+
+    String userId;
+    String password;
+    public void logIn(ActionEvent event){
+        userId = userIdTF.getText();
+        System.out.println(userId);
+    }
 
 
 
