@@ -13,7 +13,7 @@ public class dealHubController {
     @FXML
     private ImageView loginImageView;
     @FXML
-    private TextField userIdTF;
+    private TextField uIdTF;
     @FXML
     private TextField passTF;
     @FXML
@@ -21,12 +21,9 @@ public class dealHubController {
     @FXML
     private Button createAccBt;
 
-    String userId;
-    String password;
-    public void logIn(ActionEvent event){
-        userId = userIdTF.getText();
-        System.out.println(userId);
-    }
+    int uId;
+    int password;
+
 
 
 

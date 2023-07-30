@@ -7,6 +7,7 @@
     <list default="true" id="6c5bb953-badc-408e-b4a9-a31e1ff04939" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/dealHubController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/dealHubController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/image/Login Page.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/loginPage.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -46,7 +47,8 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
-    "last_opened_file_path": "H:/DealHub/src/main/java/image",
+    "last_directory_selection": "H:/DealHub/src/main/java/com/dealhub",
+    "last_opened_file_path": "H:/Project-BankingSystem-main",
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.2",
@@ -56,6 +58,9 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="H:\DealHub\src\main\java\image" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\DealHub\src\main\resources\com\dealhub" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
