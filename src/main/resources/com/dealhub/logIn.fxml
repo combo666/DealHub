@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.loginController">
    <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
       <image>
          <Image url="@loginPage.png" />
@@ -28,5 +28,5 @@
       </font></TextField>
    <PasswordField fx:id="passTF" layoutX="385.0" layoutY="542.0" prefHeight="45.0" prefWidth="265.0" style="-fx-background-color: transparent;" />
    <Button fx:id="loginBt" layoutX="403.0" layoutY="626.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="235.0" style="-fx-background-color: transparent;" />
-   <Button fx:id="createAccBt" layoutX="400.0" layoutY="755.0" mnemonicParsing="false" prefHeight="68.0" prefWidth="238.0" style="-fx-background-color: transparent;" />
+   <Button fx:id="createAccBt" layoutX="400.0" layoutY="755.0" mnemonicParsing="false" onAction="#creatAcc" prefHeight="68.0" prefWidth="238.0" style="-fx-background-color: transparent;" />
 </AnchorPane>

@@ -27,20 +27,13 @@ public class loginController {
     @FXML
     private Button createAccBt;
 
-    @FXML
-    public void  creatAcc(ActionEvent event){
-        
-    }
-
     int userId;
     int password;
 
     private Scene scene;
     private Parent root;
 
-
-
-
+    @FXML
     public void creatAcc(ActionEvent event) throws IOException {
 
 

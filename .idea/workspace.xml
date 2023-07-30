@@ -5,16 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c5bb953-badc-408e-b4a9-a31e1ff04939" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccount.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/css/main.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/homeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/dealHubApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/dealHubController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/loginPage.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/loginPage.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +70,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.creatAccountApplication">
+  <component name="RunManager" selected="Application.DealHub">
     <configuration name="DealHub" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.loginApplication" />
       <module name="DealHub" />
