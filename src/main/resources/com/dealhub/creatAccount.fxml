@@ -7,7 +7,6 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.creatAccountController">
    <children>
       <ImageView fx:id="creatAccountIV" fitHeight="1080.0" fitWidth="1920.0" layoutX="-9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
@@ -40,7 +39,7 @@
             <Font name="Bell MT Bold" size="14.0" />
          </font>
       </TextField>
-      <Button fx:id="signupBt" layoutX="230.0" layoutY="851.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="131.0" style="-fx-background-color: tranparent;" />
+      <Button fx:id="signupBt" layoutX="230.0" layoutY="851.0" mnemonicParsing="false" onAction="#signup" prefHeight="39.0" prefWidth="131.0" style="-fx-background-color: tranparent;" />
       <Button fx:id="loginBt" layoutX="394.0" layoutY="854.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="145.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

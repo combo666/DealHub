@@ -27,6 +27,6 @@
          <Font name="Arial Bold" size="14.0" />
       </font></TextField>
    <PasswordField fx:id="passTF" layoutX="385.0" layoutY="542.0" prefHeight="45.0" prefWidth="265.0" style="-fx-background-color: transparent;" />
-   <Button fx:id="loginBt" layoutX="403.0" layoutY="626.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="235.0" style="-fx-background-color: transparent;" />
+   <Button fx:id="loginBt" layoutX="403.0" layoutY="626.0" mnemonicParsing="false" onAction="#logIn" prefHeight="45.0" prefWidth="235.0" style="-fx-background-color: transparent;" />
    <Button fx:id="createAccBt" layoutX="400.0" layoutY="755.0" mnemonicParsing="false" onAction="#creatAcc" prefHeight="68.0" prefWidth="238.0" style="-fx-background-color: transparent;" />
 </AnchorPane>
