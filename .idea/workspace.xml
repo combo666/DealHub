@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c5bb953-badc-408e-b4a9-a31e1ff04939" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountIncorrectPage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginIncorrectIDPass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccountIncorrectPage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/loginIncorrectIDPass.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccount.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccountPAge.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccountPage.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -39,27 +46,31 @@
     </option>
   </component>
   <component name="ProjectId" id="2RWVYBfwbg3UsIijDQiEMMZFFpT" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_directory_selection&quot;: &quot;H:/DealHub/src/main/java/com/dealhub&quot;,
-    &quot;last_opened_file_path&quot;: &quot;H:/Project-BankingSystem-main&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.importing&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_directory_selection": "H:/DealHub/src/main/java/com/dealhub",
+    "last_opened_file_path": "H:/DealHub/src/main/java/com/dealhub",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.importing"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="H:\DealHub\src\main\java\com\dealhub" />
       <recent name="H:\DealHub\src\main\java\image" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -117,6 +128,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
