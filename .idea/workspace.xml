@@ -5,18 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c5bb953-badc-408e-b4a9-a31e1ff04939" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountIncorrectPage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginIncorrectIDPass.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccountIncorrectPage.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/loginIncorrectIDPass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountIncorrectPassPage.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccountIncorrectPassPage.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccount.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccount.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccountPAge.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/creatAccountPage.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +74,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DealHub">
+  <component name="RunManager" selected="Application.creatAccountApplication">
     <configuration name="DealHub" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.loginApplication" />
       <module name="DealHub" />

@@ -79,10 +79,10 @@ public class loginController implements Initializable {
             searchId = x.next();
             garbage1 = x.next();
             garbage2 = x.next();
-            garbage3 = x.next();
+            searchPass = x.next();
             garbage4 = x.next();
 
-            if(searchId.equals(pass)){
+            if(searchId.equals(id) && searchPass.equals(pass)){
                 found = true;
                 System.out.println(searchId);
             }

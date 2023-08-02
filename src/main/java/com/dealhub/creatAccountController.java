@@ -42,7 +42,8 @@ public class creatAccountController {
     @FXML
     private Button loginBt;
 
-    Image photo = new Image(Objects.requireNonNull(getClass().getResourceAsStream("creatAccountIncorrectPage.png")));
+    Image photoId = new Image(Objects.requireNonNull(getClass().getResourceAsStream("creatAccountIncorrectPage.png")));
+    Image photoPass = new Image(Objects.requireNonNull(getClass().getResourceAsStream("creatAccountIncorrectPassPage.png")));
 
     @FXML
     public void loginAcc(ActionEvent event) throws IOException {
@@ -83,7 +84,9 @@ public class creatAccountController {
         }
 
         if(!isNumeric){
-            creatAccountIV.setImage(photo);
+            creatAccountIV.setImage(photoId);
+        }else if(!pass.equals(cPass)){
+            creatAccountIV.setImage(photoPass);
         }else{
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append(id).append(",").append(fName).append(",").append(lName).append(",").append(pass).append(",").append(cPass).append("\n");
