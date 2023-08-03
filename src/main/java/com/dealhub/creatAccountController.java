@@ -59,13 +59,10 @@ public class creatAccountController {
 
     }
 
-
     @FXML
     public void signup(ActionEvent event) throws Exception {
         createAcc();
     }
-
-
 
     private void createAcc() throws Exception{
         String fName = firstNameTF.getText();
@@ -83,7 +80,9 @@ public class creatAccountController {
             isNumeric = false;
         }
 
-        if(!isNumeric){
+        int i = id.length();
+        System.out.println(i);
+        if(!isNumeric || i != 9 ) {
             creatAccountIV.setImage(photoId);
         }else if(!pass.equals(cPass)){
             creatAccountIV.setImage(photoPass);
