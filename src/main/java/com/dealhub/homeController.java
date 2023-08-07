@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class homeController implements  Initializable{
+
     @FXML
     private GridPane postGrid;
     private final List<itemPost> posts;
