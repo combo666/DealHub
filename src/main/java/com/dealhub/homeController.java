@@ -4,61 +4,100 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.Scanner;
 
 public class homeController implements  Initializable{
 
     @FXML
-    private GridPane postGrid;
-    private final List<itemPost> posts;
+    private VBox postContainer;
+    List<itemPost> post;
 
-    public homeController(GridPane postGrid, List<itemPost> posts) {
-        this.postGrid = postGrid;
-        this.posts = posts;
-    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        int col = 0;
-        int row = 1;
-        for (itemPost post : posts) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("item.fxml"));
 
-            try {
-                VBox postVBox = fxmlLoader.load();
+
+        post = new ArrayList<>(getPosts());
+
+        try{
+            for (itemPost posts : post) {
+                FXMLLoader fxmlLoader = new FXMLLoader();
+                fxmlLoader.setLocation(getClass().getResource("item.fxml"));
+                VBox vBox = null;
+                vBox = fxmlLoader.load();
 
                 itemController itemController = fxmlLoader.getController();
-                itemController.setData(post);
+                itemController.setData(posts);
+                postContainer.getChildren().add(vBox);
 
-                if (col == 3) {
-                    col = 0;
-                    row++;
-                }
 
-                postGrid.add(postVBox, col++, row);
-                GridPane.setMargin(postVBox, new Insets(10));
-
-            } catch (Exception e) {
-                throw new RuntimeException(e);
             }
+        }catch(Exception e){
+            System.out.println(e);
         }
     }
 
-    private List<itemPost> data(){
+    public List<itemPost> getPosts() {
         List<itemPost> ls = new ArrayList<>();
 
-        itemPost post = new itemPost();
-        post.setItemName("Halim");
-        post.setItemImage("cartImagei_Phone.png");
+        itemPost post;
+
+        String roomId,roomName = null,roomImage = null;
+
+        try{
+            Scanner x = new Scanner(new File("room.csv"));
+            while (x.hasNext()){
+                x.useDelimiter("[,\n]");
+                roomId = x.next();
+                roomName = x.next();
+                roomImage = x.next();
+                System.out.println(roomName +" "+roomImage);
+
+                post = new itemPost();
+                post.setItemName(roomId);
+                post.setItemImage("cartImagei_phone.png");
+                ls.add(post);
+            }
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+
+
+
+
+//        try{
+//            Scanner x = new Scanner(new File("room.csv"));
+//            x.useDelimiter("[,\n]");
+//            while (x.hasNext()){
+//                roomId = x.next();
+//                roomName = x.next();
+//                roomImage = x.next();
+//
+//                post = new itemPost();
+//                post.setItemName(roomName);
+//                post.setItemImage(roomImage);
+//
+//                ls.add(post);
+//
+//            }
+//
+//        }catch (Exception e){
+//            System.out.println(e);
+//        }
+
 
         return ls;
-
     }
 }

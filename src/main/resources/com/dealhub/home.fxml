@@ -4,6 +4,10 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.homeController">
    <children>
@@ -16,5 +20,20 @@
             </ImageView>
          </content>
       </ScrollPane>
+      <BorderPane prefHeight="1070.0" prefWidth="1910.0" style="-fx-background-color: transparent;">
+         <bottom>
+            <HBox prefHeight="486.0" prefWidth="1910.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+               <children>
+                  <Pane prefHeight="486.0" prefWidth="158.0" />
+                  <ScrollPane style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+                     <content>
+                        <VBox fx:id="postContainer" alignment="TOP_CENTER" prefHeight="484.0" prefWidth="1300.0" style="-fx-background-color: #E8F3F8;" />
+                     </content>
+                  </ScrollPane>
+                  <Pane prefHeight="318.0" prefWidth="440.0" />
+               </children>
+            </HBox>
+         </bottom>
+      </BorderPane>
    </children>
 </AnchorPane>

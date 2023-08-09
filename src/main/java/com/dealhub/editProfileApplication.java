@@ -16,6 +16,9 @@ public class editProfileApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("editProfile.fxml"));
+
+        editProfileController ctrl = fxmlLoader.getController();
+
         Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
         stage.setTitle("DealHub");
         stage.setScene(scene);
