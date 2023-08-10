@@ -3,6 +3,7 @@ package com.dealhub;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -18,8 +19,10 @@ public class editProfileApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("editProfile.fxml"));
 
         editProfileController ctrl = fxmlLoader.getController();
-
+        /*Image iconImage = new Image("DealHubIcon.png");
+        stage.getIcons().add(iconImage);*/
         Scene scene = new Scene(fxmlLoader.load(), 1920, 1080);
+
         stage.setTitle("DealHub");
         stage.setScene(scene);
         stage.show();
