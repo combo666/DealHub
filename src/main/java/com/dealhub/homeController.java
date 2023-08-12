@@ -21,6 +21,8 @@ public class homeController implements  Initializable{
 
     @FXML
     private VBox postContainer;
+    @FXML
+    private GridPane roomContainer;
     List<itemPost> post;
 
 
@@ -29,6 +31,8 @@ public class homeController implements  Initializable{
 
 
         post = new ArrayList<>(getPosts());
+        int col = 0;
+        int row = 1;
 
         try{
             for (itemPost posts : post) {
@@ -39,7 +43,13 @@ public class homeController implements  Initializable{
 
                 itemController itemController = fxmlLoader.getController();
                 itemController.setData(posts);
-                postContainer.getChildren().add(vBox);
+
+                if(col == 4){
+                    col=0;
+                    ++row;
+                }
+                roomContainer.add(vBox,col++,row);
+                GridPane.setMargin(vBox,new Insets(10));
 
 
             }

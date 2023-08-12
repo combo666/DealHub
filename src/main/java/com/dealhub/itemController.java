@@ -31,8 +31,7 @@ public class itemController implements Initializable {
     private Label itemName;
 
     private itemPost getPost(){
-        itemPost post = new itemPost();
-        return post;
+        return new itemPost();
 
     }
 
