@@ -5,16 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c5bb953-badc-408e-b4a9-a31e1ff04939" name="Changes" comment="">
-<<<<<<< Updated upstream
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-=======
->>>>>>> Stashed changes
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/room.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/itemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/itemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,11 +148,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.editProfileApplication" />
-<<<<<<< Updated upstream
-=======
-        <item itemvalue="Application.uploadProductApplication" />
-        <item itemvalue="Application.homeApplication" />
->>>>>>> Stashed changes
         <item itemvalue="Application.itemApplication" />
         <item itemvalue="Application.homeApplication" />
         <item itemvalue="Application.uploadProductApplication" />
