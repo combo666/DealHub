@@ -27,14 +27,14 @@
             <HBox prefHeight="486.0" prefWidth="1910.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
                <children>
                   <Pane prefHeight="486.0" prefWidth="158.0" />
-                  <ScrollPane style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
+                  <ScrollPane prefHeight="486.0" prefWidth="1024.0" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
                      <content>
-                        <GridPane fx:id="roomContainer">
+                        <GridPane fx:id="roomContainer" hgap="30.0">
                           <rowConstraints>
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <padding>
-                              <Insets top="10.0" />
+                              <Insets right="40.0" />
                            </padding>
                         </GridPane>
                      </content>

@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.editProfileController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.editProfileController">
    <children>
       <TextField fx:id="fName" layoutX="596.0" layoutY="270.0" prefHeight="75.0" prefWidth="404.0" promptText=" " style="-fx-background-color: transparent;">
          <font>
@@ -26,12 +26,12 @@
             <Font name="System Bold" size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="newPass" layoutX="596.0" layoutY="650.0" prefHeight="70.0" prefWidth="875.0" style="-fx-background-color: transparent;">
+      <TextField fx:id="contactNumber" layoutX="594.0" layoutY="518.0" prefHeight="70.0" prefWidth="877.0" style="-fx-background-color: transparent;">
          <font>
             <Font size="24.0" />
          </font>
       </TextField>
-      <TextField fx:id="contactNumber" layoutX="594.0" layoutY="518.0" prefHeight="70.0" prefWidth="877.0" style="-fx-background-color: transparent;">
+      <TextField fx:id="newPass" layoutX="596.0" layoutY="650.0" prefHeight="70.0" prefWidth="875.0" style="-fx-background-color: transparent;">
          <font>
             <Font size="24.0" />
          </font>

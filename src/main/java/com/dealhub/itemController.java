@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -29,6 +30,8 @@ public class itemController implements Initializable {
 
     @FXML
     private Label itemName;
+    @FXML
+    private Button detailsBtn;
 
     private itemPost getPost(){
         return new itemPost();
@@ -61,6 +64,19 @@ public class itemController implements Initializable {
         }catch (Exception ignored){}
 
     }
+    @FXML
+    public void setDetailsBtn(ActionEvent event)throws IOException{
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("roomPage.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        }catch (Exception ignored){}
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

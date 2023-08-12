@@ -63,50 +63,29 @@ public class homeController implements  Initializable{
 
         itemPost post;
 
-        String roomId,roomName = null,roomImage = null;
+        String roomId,roomName = null,roomImage;
 
         try{
             Scanner x = new Scanner(new File("room.csv"));
+            x.useDelimiter("[,\n]");
             while (x.hasNext()){
-                x.useDelimiter("[,\n]");
-                roomId = x.next();
-                roomName = x.next();
-                roomImage = x.next();
-                System.out.println(roomName +" "+roomImage);
+                String line = x.nextLine();
+                String[] values = line.split(",");
 
-                post = new itemPost();
-                post.setItemName(roomId);
-                post.setItemImage("cartImagei_phone.png");
-                ls.add(post);
+                if (values.length >= 3) {
+                    roomId = values[0];
+                    roomName = values[1];
+                    roomImage = values[2];
+
+                    post = new itemPost();
+                    post.setItemName(roomName);
+                    post.setItemImage(roomImage);
+                    ls.add(post);
+                }
             }
         }catch (Exception e){
             System.out.println(e);
         }
-
-
-
-
-
-//        try{
-//            Scanner x = new Scanner(new File("room.csv"));
-//            x.useDelimiter("[,\n]");
-//            while (x.hasNext()){
-//                roomId = x.next();
-//                roomName = x.next();
-//                roomImage = x.next();
-//
-//                post = new itemPost();
-//                post.setItemName(roomName);
-//                post.setItemImage(roomImage);
-//
-//                ls.add(post);
-//
-//            }
-//
-//        }catch (Exception e){
-//            System.out.println(e);
-//        }
-
 
         return ls;
     }
