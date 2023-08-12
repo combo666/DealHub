@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6c5bb953-badc-408e-b4a9-a31e1ff04939" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/uploadProductApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/uploadProductController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/uploadProduct.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/uploadProduct.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/editProfile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,8 +20,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaFXApplication" />
-        <option value="FxmlFile" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -77,23 +76,10 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.editProfileApplication">
+  <component name="RunManager" selected="Application.uploadProductApplication">
     <configuration name="DealHub" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.loginApplication" />
       <module name="DealHub" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="creatAccountApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.creatAccountApplication" />
-      <module name="DealHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dealhub.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -150,13 +136,26 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="uploadProductApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.uploadProductApplication" />
+      <module name="DealHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dealhub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.uploadProductApplication" />
         <item itemvalue="Application.editProfileApplication" />
         <item itemvalue="Application.homeApplication" />
         <item itemvalue="Application.itemApplication" />
         <item itemvalue="Application.homeController" />
-        <item itemvalue="Application.creatAccountApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -205,5 +204,10 @@
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DealHub$uploadProductApplication.ic" NAME="uploadProductApplication Coverage Results" MODIFIED="1691852137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dealhub.*</FILTER>
+    </SUITE>
   </component>
 </project>

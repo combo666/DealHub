@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <?import javafx.scene.control.Button?>
+        <?import javafx.scene.control.TextField?>
+        <?import javafx.scene.image.Image?>
+        <?import javafx.scene.image.ImageView?>
+        <?import javafx.scene.layout.AnchorPane?>
+        <?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.uploadProductController">
+<children>
+    <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@uploadProduct.png" />
+        </image>
+    </ImageView>
+    <Button fx:id="cancelBt" layoutX="656.0" layoutY="934.0" mnemonicParsing="false" opacity="0.0" prefHeight="49.0" prefWidth="176.0" text="Button" />
+    <Button fx:id="submitBt" layoutX="968.0" layoutY="931.0" mnemonicParsing="false" opacity="0.0" prefHeight="49.0" prefWidth="176.0" text="Button" />
+    <Button fx:id="uploadImageBt" layoutX="48.0" layoutY="652.0" mnemonicParsing="false" opacity="0.0" prefHeight="58.0" prefWidth="362.0" text="Button" />
+    <Button layoutX="679.0" layoutY="74.0" mnemonicParsing="false" opacity="0.0" prefHeight="58.0" prefWidth="650.0" text="Button" />
+    <TextField fx:id="catagory" layoutX="44.0" layoutY="424.0" prefHeight="49.0" prefWidth="362.0" style="-fx-background-color: trasparent;">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </TextField>
+    <TextField fx:id="endHour" layoutX="653.0" layoutY="479.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </TextField>
+    <TextField fx:id="actualCost" layoutX="653.0" layoutY="362.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </TextField>
+    <TextField fx:id="productDelivery" layoutX="653.0" layoutY="592.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </TextField>
+    <TextField fx:id="companyName" layoutX="653.0" layoutY="720.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </TextField>
+    <TextField fx:id="productName" layoutX="45.0" layoutY="542.0" prefHeight="49.0" prefWidth="362.0" style="-fx-background-color: trasparent;">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </TextField>
+    <TextField alignment="TOP_LEFT" layoutX="1321.0" layoutY="360.0" prefHeight="437.0" prefWidth="336.0" style="-fx-background-color: trasnparent;">
+        <font>
+            <Font name="Arial" size="18.0" />
+        </font>
+    </TextField>
+</children>
+</AnchorPane>
+
+
+
+
