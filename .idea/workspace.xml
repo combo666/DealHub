@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6c5bb953-badc-408e-b4a9-a31e1ff04939" name="Changes" comment="">
+    <list default="true" id="199edd46-d68a-4505-b400-b8f4c61f0ff9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/myProfileApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/myProfileController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/myProfile.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/myProfile.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,7 +77,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.editProfileApplication">
+  <component name="RunManager" selected="Application.myProfileApplication">
     <configuration name="DealHub" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.loginApplication" />
       <module name="DealHub" />
@@ -106,8 +111,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="homeController" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.homeController" />
+    <configuration name="itemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.itemApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -119,8 +124,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="itemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.itemApplication" />
+    <configuration name="myProfileApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.myProfileApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -147,18 +152,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.myProfileApplication" />
         <item itemvalue="Application.editProfileApplication" />
+        <item itemvalue="Application.uploadProductApplication" />
         <item itemvalue="Application.itemApplication" />
         <item itemvalue="Application.homeApplication" />
-        <item itemvalue="Application.uploadProductApplication" />
-        <item itemvalue="Application.homeController" />
       </list>
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="6c5bb953-badc-408e-b4a9-a31e1ff04939" name="Changes" comment="" />
+      <changelist id="199edd46-d68a-4505-b400-b8f4c61f0ff9" name="Changes" comment="" />
       <created>1687365870808</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
