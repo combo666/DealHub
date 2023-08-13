@@ -13,14 +13,18 @@
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/ss.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data.csv" beforeDir="false" afterPath="$PROJECT_DIR$/data.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/room.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/cartImagei_Phone.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/cartImage01.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/itemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/itemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/myProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/myProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/cartImagei_Phone.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/editProfile.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/myProfile.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +91,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.editProfileApplication">
+  <component name="RunManager" selected="Application.myProfileApplication">
     <configuration name="DealHub" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.loginApplication" />
       <module name="DealHub" />
@@ -162,11 +166,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.editProfileApplication" />
-        <item itemvalue="Application.homeApplication" />
         <item itemvalue="Application.myProfileApplication" />
-        <item itemvalue="Application.uploadProductApplication" />
+        <item itemvalue="Application.editProfileApplication" />
         <item itemvalue="Application.itemApplication" />
+        <item itemvalue="Application.homeApplication" />
+        <item itemvalue="Application.uploadProductApplication" />
       </list>
     </recent_temporary>
   </component>

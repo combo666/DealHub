@@ -2,19 +2,26 @@ package com.dealhub;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class editProfileController {
+public class editProfileController /*implements Initializable*/ {
     @FXML
     private ImageView editProfileImage;
     @FXML
@@ -106,9 +113,20 @@ public class editProfileController {
         }
 
     }
-    public void CancelButtonPress(){
+    public void CancelButtonPress() {
+        /*FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
+        Parent secondSceneRoot = secondLoader.load();
+        Scene secondScene = new Scene(secondSceneRoot);
+
+        Stage primaryStage = (Stage) cancelBtn.getScene().getWindow();
+        primaryStage.setScene(secondScene);*/
 
     }
+
+    /*@Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        editedData();
+    }*/
 }
 
 
