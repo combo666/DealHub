@@ -20,7 +20,7 @@ public class editProfileController {
     @FXML
     private TextField fName;
     @FXML
-    private TextField address;
+    private TextField newPass;
     @FXML
     private Button cancelBtn;
     @FXML
@@ -28,17 +28,19 @@ public class editProfileController {
     @FXML
     private TextField lName;
     @FXML
-    private TextField pass;
+    private TextField confPass;
     @FXML
-    private Button saveBtn ;
+    private Button saveBtn;
     @FXML
     private TextField uID;
     @FXML
-    private Label fNameLabel;
-
+    private Label passVerify;
 
     @FXML
     String searchId, firstName, lastName, oPass = "", conPass = "", garbage4 = "";
+    String[] info;
+    List<String> lines = new ArrayList<>();
+
     public editProfileController() throws IOException {
 
         boolean found = false;
@@ -49,22 +51,21 @@ public class editProfileController {
 
             while (x.hasNextLine()) {
                 String line = x.nextLine();
-                String[] info = line.split(",");//info is an Array of splited data of users
-                if (info.length >= 2) {
-                    firstName = info[1].trim();
-                    //System.out.printf(firstName);
-                }
-                if (info.length >= 3) {
-                    lastName = info[2].trim();
-                }
+                info = line.split(",");//info is an Array of splited data of users
 
+                if (info.length <= 5) {
+                    searchId = info[0].trim();
+                    firstName = info[1].trim();
+                    lastName = info[2].trim();
+                    oPass = info[3].trim();
+                    conPass = info[4].trim();
+                }
 
             }
+            x.close();
         } catch (Exception e) {
             System.out.println(e.toString());
         }
-
-
     }
 
     @FXML
@@ -73,20 +74,42 @@ public class editProfileController {
         lName.setText(lastName);
     }
 
-    List<String> lines = new ArrayList<>();
-
     @FXML
     public void editedData() {
-        saveBtn.setOnAction(actionEvent -> {
-            if (!fName.getText().equals(firstName)) {
-                fName.setText(fName.getText());
-                System.out.printf(fName.getText());
-
-            };
-        });
+        if (confPass.getText().equals(info[4])&&(!fName.getText().equals(firstName)||!lName.getText().equals(lastName))) {
+            info[1] = fName.getText();
+            info[2] = lName.getText();
+            lines.add(String.join(",", info));
+            try (FileWriter writer = new FileWriter("data.csv")) {
+                for (String line : lines) {
+                    writer.write(line + System.lineSeparator());
+                }
+                writer.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+            firstName = info[1];
+            lastName = info[2];
+            passVerify.setText("");
 
         }
+        else if(confPass.getText().isEmpty()){
+            passVerify.setText("Please provide your password");
+        }
+        else if(!confPass.getText().equals(info[4])){
+            passVerify.setText("Password is incorrect");
+        }
+        else if(confPass.getText().isEmpty()){
+            passVerify.setText("Please provide your password");
+        }
+
     }
+    public void CancelButtonPress(){
+
+    }
+}
 
 
 
