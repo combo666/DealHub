@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.stage.Stage;
@@ -21,21 +22,23 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Scanner;
 
-public class editProfileController /*implements Initializable*/ {
+public class editProfileController /*implements Initializable */{
     @FXML
     private ImageView editProfileImage;
     @FXML
     private TextField fName;
     @FXML
-    private TextField newPass;
+    private PasswordField newPass;
     @FXML
     private Button cancelBtn;
+    @FXML
+    private Button homeBtn;
     @FXML
     private TextField contactNumber;
     @FXML
     private TextField lName;
     @FXML
-    private TextField confPass;
+    private PasswordField confPass;
     @FXML
     private Button saveBtn;
     @FXML
@@ -82,7 +85,7 @@ public class editProfileController /*implements Initializable*/ {
     }
 
     @FXML
-    public void editedData() {
+    public void editedData() throws IOException {
         if (confPass.getText().equals(info[4])&&(!fName.getText().equals(firstName)||!lName.getText().equals(lastName))) {
             info[1] = fName.getText();
             info[2] = lName.getText();
@@ -100,6 +103,14 @@ public class editProfileController /*implements Initializable*/ {
             firstName = info[1];
             lastName = info[2];
             passVerify.setText("");
+            if(confPass.getText().equals(info[4])){
+                FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
+                Parent secondSceneRoot = secondLoader.load();
+                Scene secondScene = new Scene(secondSceneRoot);
+
+                Stage primaryStage = (Stage) saveBtn.getScene().getWindow();
+                primaryStage.setScene(secondScene);
+            }
 
         }
         else if(confPass.getText().isEmpty()){
@@ -113,13 +124,24 @@ public class editProfileController /*implements Initializable*/ {
         }
 
     }
-    public void CancelButtonPress() {
-        /*FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
+    @FXML
+    public void CancelButtonPress() throws IOException {
+        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
         Parent secondSceneRoot = secondLoader.load();
         Scene secondScene = new Scene(secondSceneRoot);
 
         Stage primaryStage = (Stage) cancelBtn.getScene().getWindow();
-        primaryStage.setScene(secondScene);*/
+        primaryStage.setScene(secondScene);
+
+    }
+   @FXML
+    public void homeButtonPress() throws IOException {
+        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("home.fxml"));
+        Parent secondSceneRoot = secondLoader.load();
+        Scene secondScene = new Scene(secondSceneRoot);
+
+        Stage primaryStage = (Stage) homeBtn.getScene().getWindow();
+        primaryStage.setScene(secondScene);
 
     }
 
