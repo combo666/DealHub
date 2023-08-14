@@ -21,6 +21,11 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 import java.util.Scanner;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
 
 public class loginController implements Initializable {
 
@@ -60,32 +65,55 @@ public class loginController implements Initializable {
 
     @FXML
     public void logIn(ActionEvent event) throws IOException {
-        checkLogIn();
-    }
 
-    String searchId = "", searchPass = "" , garbage1 = "", garbage2 = "", garbage3 = "", garbage4 = "";
+        Connection connection = null;
+        String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
+        String username = "root";
+        String password = "";
 
-    @FXML
-    private void checkLogIn() throws IOException{
+        try {
+            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            System.out.println("Connected to the database!");
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
+
         String id=uIdTF.getText();
         String pass = passTF.getText();
 
         boolean found = false;
 
-        Scanner x = new Scanner(new File("data.csv"));
-        x.useDelimiter("[,\n]");
+        try {
+            Statement statement = connection.createStatement();
+            String sqlQuery = "SELECT * FROM userdata";
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
 
-        while (x.hasNext() && !found){
-            searchId = x.next();
-            garbage1 = x.next();
-            garbage2 = x.next();
-            searchPass = x.next();
-            garbage4 = x.next();
+            while (resultSet.next()) {
+                // Process each row in the result set
+                String colid = resultSet.getString("id");
+                String colpass = resultSet.getString("newPassword");
+                // Process other columns...
+                System.out.println(colid +" "+ colpass);
+                if(id.equals(colid) && pass.equals(colpass)){
+                    found = true;
+                    System.out.println("found");
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("home.fxml"));
+                        Parent root = (Parent) fxmlLoader.load();
+                        Stage stage = new Stage();
+                        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                        stage.setScene(new Scene(root));
+                        stage.show();
 
-            if(searchId.equals(id) && searchPass.equals(pass)){
-                found = true;
-                System.out.println(searchId);
+                    }catch (Exception ignored){}
+                }
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
 
@@ -93,10 +121,15 @@ public class loginController implements Initializable {
             loginImageView.setImage(photo);
         }
 
-
-
+        try {
+            if (connection != null) {
+                connection.close();
+                System.out.println("Connection closed.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
-
 
 
     @Override

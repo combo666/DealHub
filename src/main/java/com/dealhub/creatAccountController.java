@@ -16,9 +16,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.sql.*;
 import java.util.Objects;
-
-
 
 
 public class creatAccountController {
@@ -65,36 +64,106 @@ public class creatAccountController {
     }
 
     private void createAcc() throws Exception{
+        Connection connection = null;
+        String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
+        String username = "root";
+        String password = "";
+
+        try {
+            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            System.out.println("Connected to the database!");
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+
         String fName = firstNameTF.getText();
         String lName = lastNameTF.getText();
-        String id = uniqueIDTF.getText();
+        String uid = uniqueIDTF.getText();
         String pass = passwordTF.getText();
         String cPass = confirmPasswordTF.getText();
 
         boolean isNumeric = true;
-        User us = new User(fName , lName , id , pass , cPass);
+        boolean uidFound = false;
+        User us = new User(fName , lName , uid , pass , cPass);
 
         try{
-            Double d = Double.parseDouble(id);
+            Double d = Double.parseDouble(uid);
         }catch (Exception e){
             isNumeric = false;
         }
 
-        int i = id.length();
-        System.out.println(i);
+        try {
+            assert connection != null;
+            Statement statement = connection.createStatement();
+            String sql = "SELECT * FROM `userdata` WHERE 1";
+            ResultSet resultSet = statement.executeQuery(sql);
+
+            while (resultSet.next()) {
+                // Process each row in the result set
+                String columnValue = resultSet.getString("id");
+                // Process other columns...
+                if(Objects.equals(uid, columnValue)){
+                    uidFound = true;
+                }
+                System.out.println(columnValue);
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+        int i = uid.length();
         if(!isNumeric || i != 9 ) {
             creatAccountIV.setImage(photoId);
-        }else if(!pass.equals(cPass)){
+        }else if(uidFound){
+            creatAccountIV.setImage(photoId);
+        }
+        else if(!pass.equals(cPass)){
             creatAccountIV.setImage(photoPass);
         }else{
             StringBuilder stringBuilder = new StringBuilder();
-            stringBuilder.append(id).append(",").append(fName).append(",").append(lName).append(",").append(pass).append(",").append(cPass).append("\n");
+            stringBuilder.append(uid).append(",").append(fName).append(",").append(lName).append(",").append(pass).append(",").append(cPass).append("\n");
 
             try(FileWriter writer = new FileWriter("data.csv", true);) {
                 writer.write(stringBuilder.toString());
                 writer.close();
             }catch(IOException ignored){}
+
+            try {
+                assert connection != null;
+                String sql = "INSERT INTO `userdata` (`id`, `first_name`, `last_name`, `contact_number`, `newPassword`, `confirmPassword`) VALUES (?, ?, ?, ?, ?, ?)";
+
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, uid);
+                preparedStatement.setString(2, fName);
+                preparedStatement.setString(3, lName);
+                preparedStatement.setString(4, "Empty");
+                preparedStatement.setString(5, pass);
+                preparedStatement.setString(6, cPass);
+
+                int rowsAffected = preparedStatement.executeUpdate();
+                System.out.println(rowsAffected + " row(s) inserted.");
+
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
+
+        try {
+            if (connection != null) {
+                connection.close();
+                System.out.println("Connection closed.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+
 
     }
 

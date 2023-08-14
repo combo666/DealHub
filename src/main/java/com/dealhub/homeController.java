@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
@@ -12,10 +14,14 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.*;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.sql.ResultSet;
+
 
 public class homeController implements  Initializable{
 
@@ -23,6 +29,14 @@ public class homeController implements  Initializable{
     private VBox postContainer;
     @FXML
     private GridPane roomContainer;
+    @FXML
+    private ImageView homeImage;
+    Image photo = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithoutLogin.png")));
+
+    Connection connection = null;
+    String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
+    String username = "root";
+    String password = "";
     List<itemPost> post;
 
 
@@ -30,9 +44,20 @@ public class homeController implements  Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
 
+
+        try {
+            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            System.out.println("Connected to the database!");
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+
         post = new ArrayList<>(getPosts());
         int col = 0;
         int row = 1;
+
+
 
         try{
             for (itemPost posts : post) {
@@ -56,6 +81,15 @@ public class homeController implements  Initializable{
         }catch(Exception e){
             System.out.println(e);
         }
+
+        try {
+            if (connection != null) {
+                connection.close();
+                System.out.println("Connection closed.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 
     public List<itemPost> getPosts() {
@@ -66,22 +100,22 @@ public class homeController implements  Initializable{
         String roomId,roomName = null,roomImage;
 
         try{
-            Scanner x = new Scanner(new File("room.csv"));
-            x.useDelimiter("[,\n]");
-            while (x.hasNext()){
-                String line = x.nextLine();
-                String[] values = line.split(",");
+            Statement statement = connection.createStatement();
+            String sqlQuery = "SELECT * FROM auctionroom";
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
 
-                if (values.length >= 3) {
-                    roomId = values[0];
-                    roomName = values[1];
-                    roomImage = values[2];
+            while (resultSet.next()) {
 
-                    post = new itemPost();
-                    post.setItemName(roomName);
-                    post.setItemImage(roomImage);
-                    ls.add(post);
-                }
+                String colId = resultSet.getString("id");
+                String colName = resultSet.getString("roomname");
+                String colImage = resultSet.getString("roomimage");
+
+                System.out.println(resultSet.getInt(1));
+
+                post = new itemPost();
+                post.setItemName(colName);
+                post.setItemImage(colImage);
+                ls.add(post);
             }
         }catch (Exception e){
             System.out.println(e);
