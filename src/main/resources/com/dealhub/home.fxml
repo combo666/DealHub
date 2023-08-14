@@ -15,7 +15,7 @@
    <children>
       <ScrollPane prefHeight="1082.0" prefWidth="1920.0">
          <content>
-            <ImageView fitHeight="2151.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="homeImage" fitHeight="2151.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@homePageWithoutLogin.png" />
                </image>

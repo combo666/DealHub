@@ -134,15 +134,16 @@ public class creatAccountController {
 
             try {
                 assert connection != null;
-                String sql = "INSERT INTO `userdata` (`id`, `first_name`, `last_name`, `contact_number`, `newPassword`, `confirmPassword`) VALUES (?, ?, ?, ?, ?, ?)";
+                String sql = "INSERT INTO `userdata` (`id`, `first_name`, `last_name`, `contact_number`, `profileImage`, `newPassword`, `confirmPassword`) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, uid);
                 preparedStatement.setString(2, fName);
                 preparedStatement.setString(3, lName);
                 preparedStatement.setString(4, "Empty");
-                preparedStatement.setString(5, pass);
-                preparedStatement.setString(6, cPass);
+                preparedStatement.setString(5, "Empty");
+                preparedStatement.setString(6, pass);
+                preparedStatement.setString(7, cPass);
 
                 int rowsAffected = preparedStatement.executeUpdate();
                 System.out.println(rowsAffected + " row(s) inserted.");

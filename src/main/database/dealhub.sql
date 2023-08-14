@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2023 at 02:09 PM
+-- Generation Time: Aug 14, 2023 at 05:30 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- Database: `dealhub`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `auctionroom`
+--
+
+CREATE TABLE `auctionroom` (
+  `id` int(255) NOT NULL,
+  `roomname` varchar(255) NOT NULL,
+  `roomimage` varchar(255) NOT NULL,
+  `roomdetails` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `auctionroom`
+--
+
+INSERT INTO `auctionroom` (`id`, `roomname`, `roomimage`, `roomdetails`) VALUES
+(1, 'Cloths', 'ss.png', '0'),
+(2, 'Bookd', 'books.png', '0');
 
 -- --------------------------------------------------------
 
@@ -41,17 +62,33 @@ CREATE TABLE `userdata` (
 --
 
 INSERT INTO `userdata` (`id`, `first_name`, `last_name`, `contact_number`, `newPassword`, `confirmPassword`) VALUES
-('011203030', 'asdf', 'asdf', 'Empty', 'asdf', 'asdf');
+('011203030', 'Sahadat', 'Islam', 'empty', 'asdf', 'asdf');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `auctionroom`
+--
+ALTER TABLE `auctionroom`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `userdata`
 --
 ALTER TABLE `userdata`
   ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `auctionroom`
+--
+ALTER TABLE `auctionroom`
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
