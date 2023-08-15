@@ -2,7 +2,7 @@ package com.dealhub;
 
 import java.sql.*;
 
-public class roomItemPost {
+public class userItemPost {
     private String itemImage;
     private String profileImage;
     private String itemName;
@@ -76,47 +76,6 @@ public class roomItemPost {
         this.itemDescription = itemDescription;
     }
 
-    public static void main(String[] args) {
-        Connection connection = null;
-        String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
-        String username = "root";
-        String password = "";
 
-        try {
-            connection = DriverManager.getConnection(jdbcUrl, username, password);
-            System.out.println("Connected to the database!");
-        } catch (
-                SQLException e) {
-            e.printStackTrace();
-        }
-
-        try {
-            assert connection != null;
-            Statement statement = connection.createStatement();
-            String sql = "SELECT * FROM `userdata` WHERE 1";
-            ResultSet resultSet = statement.executeQuery(sql);
-
-            while (resultSet.next()) {
-                // Process each row in the result set
-                String columnValue = resultSet.getString("id");
-                // Process other columns...
-                System.out.println(columnValue);
-            }
-
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-        try {
-            if (connection != null) {
-                connection.close();
-                System.out.println("Connection closed.");
-            }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
 }

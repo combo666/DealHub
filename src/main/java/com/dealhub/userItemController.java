@@ -19,7 +19,7 @@ import java.net.URL;
 import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class roomItemController implements Initializable {
+public class userItemController implements Initializable {
 
     @FXML
     private VBox cartBox;
@@ -32,12 +32,12 @@ public class roomItemController implements Initializable {
     @FXML
     private Button detailsBtn;
 
-    private roomItemPost getPost(){
-        return new roomItemPost();
+    private userItemPost getPost(){
+        return new userItemPost();
 
     }
 
-    public void setData(roomItemPost post){
+    public void setData(userItemPost post){
 
         try{
             Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(post.getItemImage())));

@@ -7,7 +7,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class roomItemApplication extends Application {
+public class userItemApplication extends Application {
 
     public static void main(String[] args) {
         launch(args);
