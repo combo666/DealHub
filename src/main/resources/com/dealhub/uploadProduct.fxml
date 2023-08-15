@@ -7,48 +7,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.uploadProductController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.uploadProductController">
 <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@uploadProductNew.png" />
+            <Image url="@uploadProduct.png" />
          </image>
       </ImageView>
     <Button fx:id="cancelBt" layoutX="685.0" layoutY="928.0" mnemonicParsing="false" onAction="#CancelButtonPress" opacity="0.0" prefHeight="49.0" prefWidth="176.0" text="Button" />
-    <Button fx:id="submitBt" layoutX="960.0" layoutY="928.0" mnemonicParsing="false" opacity="0.0" prefHeight="49.0" prefWidth="176.0" text="Button" />
-    <Button fx:id="uploadImageBt" layoutX="48.0" layoutY="654.0" mnemonicParsing="false" opacity="0.0" prefHeight="49.0" prefWidth="287.0" text="Button" />
-    <Button layoutX="751.0" layoutY="60.0" mnemonicParsing="false" opacity="0.0" prefHeight="39.0" prefWidth="547.0" text="Button" />
-    <TextField fx:id="catagory" layoutX="45.0" layoutY="422.0" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: trasparent;">
+    <Button fx:id="submitBt" layoutX="960.0" layoutY="928.0" mnemonicParsing="false" onAction="#setSubmitBt" opacity="0.0" prefHeight="49.0" prefWidth="176.0" text="Button" />
+    <TextField fx:id="category" layoutX="46.0" layoutY="540.0" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: trasparent;">
         <font>
             <Font name="Arial" size="18.0" />
         </font>
     </TextField>
-    <TextField fx:id="endHour" layoutX="656.0" layoutY="477.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
+    <TextField fx:id="productName" layoutX="46.0" layoutY="421.0" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: trasparent;">
         <font>
             <Font name="Arial" size="18.0" />
         </font>
     </TextField>
-    <TextField fx:id="actualCost" layoutX="656.0" layoutY="360.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
+    <TextField fx:id="productCost" layoutX="656.0" layoutY="477.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
         <font>
             <Font name="Arial" size="18.0" />
         </font>
     </TextField>
-    <TextField fx:id="productDelivery" layoutX="656.0" layoutY="589.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
+    <TextField fx:id="endHour" layoutX="656.0" layoutY="589.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
         <font>
             <Font name="Arial" size="18.0" />
         </font>
     </TextField>
-    <TextField fx:id="companyName" layoutX="656.0" layoutY="709.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
+    <TextField fx:id="companyName" layoutX="656.0" layoutY="361.0" prefHeight="49.0" prefWidth="503.0" style="-fx-background-color: trasparent;">
         <font>
             <Font name="Arial" size="18.0" />
         </font>
     </TextField>
-    <TextField fx:id="productName" layoutX="48.0" layoutY="540.0" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: trasparent;">
-        <font>
-            <Font name="Arial" size="18.0" />
-        </font>
-    </TextField>
-    <TextField alignment="TOP_LEFT" layoutX="1281.0" layoutY="360.0" prefHeight="390.0" prefWidth="406.0" style="-fx-background-color: trasnparent;">
+    <TextField fx:id="productDetails" alignment="TOP_LEFT" layoutX="1281.0" layoutY="360.0" prefHeight="390.0" prefWidth="406.0" style="-fx-background-color: trasnparent;">
         <font>
             <Font name="Arial" size="18.0" />
         </font>
@@ -57,5 +50,7 @@
       <Button fx:id="profileBtn" layoutX="1829.0" layoutY="279.0" mnemonicParsing="false" onAction="#profileButtonPress" opacity="0.0" prefHeight="49.0" prefWidth="45.0" text="Button" />
       <Button fx:id="roomBtn" layoutX="1829.0" layoutY="385.0" mnemonicParsing="false" opacity="0.0" prefHeight="49.0" prefWidth="45.0" text="Button" />
       <Button fx:id="recentBtn" layoutX="1829.0" layoutY="491.0" mnemonicParsing="false" opacity="0.0" prefHeight="49.0" prefWidth="45.0" text="Button" />
+      <Button fx:id="chooseImageBtn" layoutX="46.0" layoutY="657.0" mnemonicParsing="false" onAction="#setChooseImageBtn" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="fileDirectory" layoutX="46.0" layoutY="706.0" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: transparent;" />
 </children>
 </AnchorPane>
