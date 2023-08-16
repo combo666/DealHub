@@ -16,6 +16,8 @@ import java.util.ResourceBundle;
 
 public class myProfileController implements Initializable{
 
+    public myProfileController(){}
+
 
     @FXML
     private TextField searchBar;

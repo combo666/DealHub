@@ -29,7 +29,9 @@ import java.sql.ResultSet;
 
 public class loginController implements Initializable {
 
-    public loginController(){}
+    public loginController() {
+
+    }
 
 
     @FXML
@@ -55,11 +57,12 @@ public class loginController implements Initializable {
             FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("creatAccount.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
 
-        }catch (Exception ignored){}
+        } catch (Exception ignored) {
+        }
 
     }
 
@@ -80,9 +83,7 @@ public class loginController implements Initializable {
         }
 
 
-
-
-        String id=uIdTF.getText();
+        String id = uIdTF.getText();
         String pass = passTF.getText();
 
         boolean found = false;
@@ -97,19 +98,21 @@ public class loginController implements Initializable {
                 String colid = resultSet.getString("id");
                 String colpass = resultSet.getString("newPassword");
                 // Process other columns...
-                System.out.println(colid +" "+ colpass);
-                if(id.equals(colid) && pass.equals(colpass)){
+                System.out.println(colid + " " + colpass);
+                if (id.equals(colid) && pass.equals(colpass)) {
+
                     found = true;
                     System.out.println("found");
                     try {
                         FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("home.fxml"));
                         Parent root = (Parent) fxmlLoader.load();
                         Stage stage = new Stage();
-                        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                         stage.setScene(new Scene(root));
                         stage.show();
 
-                    }catch (Exception ignored){}
+                    } catch (Exception ignored) {
+                    }
                 }
             }
         } catch (SQLException e) {
@@ -117,7 +120,7 @@ public class loginController implements Initializable {
         }
 
 
-        if (id == null && pass == null || !found){
+        if (id == null && pass == null || !found) {
             loginImageView.setImage(photo);
         }
 

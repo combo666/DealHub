@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 14, 2023 at 05:30 PM
+-- Generation Time: Aug 15, 2023 at 04:23 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -45,14 +45,41 @@ INSERT INTO `auctionroom` (`id`, `roomname`, `roomimage`, `roomdetails`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `uploadproducts`
+--
+
+CREATE TABLE `uploadproducts` (
+  `id` int(11) NOT NULL,
+  `uploader_id` varchar(255) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `category` varchar(255) NOT NULL,
+  `product_cost` varchar(255) NOT NULL,
+  `company_name` varchar(255) NOT NULL,
+  `end_time` time NOT NULL,
+  `product_details` varchar(255) NOT NULL,
+  `product_image` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `uploadproducts`
+--
+
+INSERT INTO `uploadproducts` (`id`, `uploader_id`, `product_name`, `category`, `product_cost`, `company_name`, `end_time`, `product_details`, `product_image`) VALUES
+(1, '011203030', 'asdf', 'asdf', 'asdf', 'asdf', '00:01:23', 'asdf', 'thisIsAnImage'),
+(2, '011203030', 'asdf', 'asdf', 'asdf', 'asdf', '00:01:23', 'asdfasdfasdf', 'Screenshot_2023-05-03_234730.png');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `userdata`
 --
 
 CREATE TABLE `userdata` (
-  `id` varchar(200) NOT NULL,
+  `id` varchar(255) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `contact_number` varchar(255) NOT NULL,
+  `profileImage` varchar(50) NOT NULL,
   `newPassword` varchar(255) NOT NULL,
   `confirmPassword` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
@@ -61,8 +88,8 @@ CREATE TABLE `userdata` (
 -- Dumping data for table `userdata`
 --
 
-INSERT INTO `userdata` (`id`, `first_name`, `last_name`, `contact_number`, `newPassword`, `confirmPassword`) VALUES
-('011203030', 'Sahadat', 'Islam', 'empty', 'asdf', 'asdf');
+INSERT INTO `userdata` (`id`, `first_name`, `last_name`, `contact_number`, `profileImage`, `newPassword`, `confirmPassword`) VALUES
+('011203030', 'Sahadat', 'Islam', 'Empty', 'Empty', 'asdf', 'asdf');
 
 --
 -- Indexes for dumped tables
@@ -72,6 +99,12 @@ INSERT INTO `userdata` (`id`, `first_name`, `last_name`, `contact_number`, `newP
 -- Indexes for table `auctionroom`
 --
 ALTER TABLE `auctionroom`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `uploadproducts`
+--
+ALTER TABLE `uploadproducts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -89,6 +122,12 @@ ALTER TABLE `userdata`
 --
 ALTER TABLE `auctionroom`
   MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `uploadproducts`
+--
+ALTER TABLE `uploadproducts`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

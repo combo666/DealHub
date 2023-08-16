@@ -124,13 +124,13 @@ public class creatAccountController {
         else if(!pass.equals(cPass)){
             creatAccountIV.setImage(photoPass);
         }else{
-            StringBuilder stringBuilder = new StringBuilder();
+            /*StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append(uid).append(",").append(fName).append(",").append(lName).append(",").append(pass).append(",").append(cPass).append("\n");
 
             try(FileWriter writer = new FileWriter("data.csv", true);) {
                 writer.write(stringBuilder.toString());
                 writer.close();
-            }catch(IOException ignored){}
+            }catch(IOException ignored){}*/
 
             try {
                 assert connection != null;
