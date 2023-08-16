@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.itemAuctionController">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@itemAuction.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="itemImage" fitHeight="448.0" fitWidth="449.0" layoutX="55.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="setYourBidTF" layoutX="960.0" layoutY="407.0" prefHeight="32.0" prefWidth="147.0" style="-fx-background-color: transparent;">
+         <font>
+            <Font name="System Bold Italic" size="16.0" />
+         </font></TextField>
+      <Label fx:id="timeLeftLabel" layoutX="960.0" layoutY="215.0" prefHeight="32.0" prefWidth="101.0" text="Label">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="CurrentPriceLabel" layoutX="960.0" layoutY="276.0" prefHeight="32.0" prefWidth="101.0" text="Label">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="MinPriceLabel" layoutX="960.0" layoutY="338.0" prefHeight="32.0" prefWidth="101.0" text="Label">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Button fx:id="placeBidBtn" layoutX="733.0" layoutY="528.0" mnemonicParsing="false" onAction="#setPlaceBidBtn" prefHeight="42.0" prefWidth="384.0" style="-fx-background-color: transparent;" />
+      <Label fx:id="itemIdLabel" layoutX="189.0" layoutY="795.0" prefHeight="32.0" prefWidth="147.0" text="Label">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="endsOnLabel" layoutX="189.0" layoutY="836.0" prefHeight="32.0" prefWidth="161.0" text="Label">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <Label fx:id="sellerLabel" layoutX="189.0" layoutY="876.0" prefHeight="32.0" prefWidth="161.0" text="Label">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font></Label>
+      <TextField fx:id="descriptionLabel" layoutX="645.0" layoutY="722.0" prefHeight="101.0" prefWidth="1026.0" style="-fx-background-color: transparent;">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font></TextField>
+      <Button fx:id="homeBtn" layoutX="1825.0" layoutY="189.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="profileBtn" layoutX="1825.0" layoutY="298.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="sectionBtn" layoutX="1825.0" layoutY="407.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="recentBtn" layoutX="1825.0" layoutY="508.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
+      <Label fx:id="itemName" layoutX="189.0" layoutY="757.0" prefHeight="32.0" prefWidth="147.0" text="Label">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Label>
+      <Label fx:id="setYourBidLabel" layoutX="960.0" layoutY="449.0" prefHeight="32.0" prefWidth="200.0">
+         <font>
+            <Font name="System Italic" size="16.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

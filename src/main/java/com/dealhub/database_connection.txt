@@ -51,3 +51,37 @@ public static void main(String[] args) {
             e.printStackTrace();
         }
     }
+
+
+
+
+    String endOn = resultSet.getString("end_time");
+                String seller = resultSet.getString("uploader_id");
+                String sellerCompany = resultSet.getString("company_name");
+                String itemImg = resultSet.getString("product_image");
+                String currPrice = resultSet.getString("current_bid");
+                String pPrice = resultSet.getString("product_cost");
+                String pDetails = resultSet.getString("product_details");
+
+                String userDataSql = "SELECT * FROM `userdata` WHERE id = ?";
+                PreparedStatement userDataStatement = connection.prepareStatement(userDataSql);
+                userDataStatement.setString(1, seller);
+                ResultSet userDataResult = userDataStatement.executeQuery();
+
+                if (userDataResult.next()) {
+                    String sellerfName = userDataResult.getString("first_name");
+                    String sellerlName = userDataResult.getString("last_name");
+                    System.out.println(sellerfName);
+                }
+
+                if (itemImg != null) {
+                    Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(itemImg)));
+                    itemImage.setImage(image);
+                }
+
+                itemIdLabel.setText(itemId);
+                System.out.println(itemImg);
+
+                // Close resources
+                userDataResult.close();
+                userDataStatement.close();
