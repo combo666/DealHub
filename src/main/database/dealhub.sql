@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2023 at 04:23 PM
+-- Generation Time: Aug 17, 2023 at 01:07 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -54,6 +54,7 @@ CREATE TABLE `uploadproducts` (
   `product_name` varchar(255) NOT NULL,
   `category` varchar(255) NOT NULL,
   `product_cost` varchar(255) NOT NULL,
+  `current_bid` varchar(255) NOT NULL,
   `company_name` varchar(255) NOT NULL,
   `end_time` time NOT NULL,
   `product_details` varchar(255) NOT NULL,
@@ -64,9 +65,8 @@ CREATE TABLE `uploadproducts` (
 -- Dumping data for table `uploadproducts`
 --
 
-INSERT INTO `uploadproducts` (`id`, `uploader_id`, `product_name`, `category`, `product_cost`, `company_name`, `end_time`, `product_details`, `product_image`) VALUES
-(1, '011203030', 'asdf', 'asdf', 'asdf', 'asdf', '00:01:23', 'asdf', 'thisIsAnImage'),
-(2, '011203030', 'asdf', 'asdf', 'asdf', 'asdf', '00:01:23', 'asdfasdfasdf', 'Screenshot_2023-05-03_234730.png');
+INSERT INTO `uploadproducts` (`id`, `uploader_id`, `product_name`, `category`, `product_cost`, `current_bid`, `company_name`, `end_time`, `product_details`, `product_image`) VALUES
+(3, '011203030', 'Evan', 'Evan', '20000', '0', 'Waliullah', '00:01:23', 'This is a very good product yk!!', 'Screenshot_20230417-102638_Photos.jpg');
 
 -- --------------------------------------------------------
 
@@ -127,7 +127,7 @@ ALTER TABLE `auctionroom`
 -- AUTO_INCREMENT for table `uploadproducts`
 --
 ALTER TABLE `uploadproducts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

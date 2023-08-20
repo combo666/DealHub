@@ -212,6 +212,6 @@ public class itemAuctionController implements Initializable {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        };
+        }
     }
 }

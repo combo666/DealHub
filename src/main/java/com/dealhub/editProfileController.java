@@ -72,7 +72,6 @@ public class editProfileController implements Initializable {
             String sqlQuery = "SELECT * FROM userdata";
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
-            loginController loginController = new loginController();
 
             while (resultSet.next()) {
                 searchId = resultSet.getString("id");
