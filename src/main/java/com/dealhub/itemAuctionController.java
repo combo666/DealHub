@@ -17,8 +17,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 import java.sql.*;
-import java.util.List;
-import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class itemAuctionController implements Initializable {
@@ -71,7 +69,10 @@ public class itemAuctionController implements Initializable {
 
     private String productPrice;
     private String productCurrBid;
-    int myBid,productPriceI;
+    private int myBid,productPriceI;
+
+
+
 
     Connection connection = null;
     String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
@@ -104,23 +105,42 @@ public class itemAuctionController implements Initializable {
     void setPlaceBidBtn(ActionEvent event) throws IOException {
 
         String text = setYourBidTF.getText();
+        try {
+            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            System.out.println("Connected to the database!");
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
 
         try {
+
             myBid = Integer.parseInt(text);
-            productPriceI = Integer.parseInt(productPrice.trim()); // Trim to remove whitespace
+            productPriceI = Integer.parseInt(productPrice.trim());
+
+
+
+
             System.out.println("myBid: " + myBid);
             System.out.println("productPriceI: " + productPriceI);
 
             if (myBid < productPriceI) {
                 setYourBidLabel.setText("You need to bid higher!");
+                System.out.println("you can not");
             } else {
-                // Place the bid or perform other actions
+                String updateQuery = "UPDATE `uploadproducts` SET `current_bid` = ? WHERE id = 3";
+                PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+                preparedStatement.setInt(1, myBid); // Set the value of myBid to the first placeholder
+                int rowsUpdated = preparedStatement.executeUpdate();
                 setYourBidLabel.setText("Bid placed successfully!");
             }
         } catch (NumberFormatException e) {
             setYourBidLabel.setText("Invalid bid input.");
             e.printStackTrace();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
+
 
         FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("itemAuction.fxml"));
         Parent secondSceneRoot = secondLoader.load();
@@ -175,6 +195,23 @@ public class itemAuctionController implements Initializable {
                 productPrice = pPrice;
                 descriptionLabel.setText(pDetails);
 
+                if(myBid == 0) {
+                    System.out.println(" ");
+                }else if (myBid < productPriceI) {
+                    setYourBidLabel.setText("You need to bid higher!");
+                    System.out.println("you can not");
+
+
+                } else {
+                    String updateQuery = "UPDATE `uploadproducts` SET `current_bid` = ? WHERE id = 3";
+                    PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+                    preparedStatement.setInt(1, myBid); // Set the value of myBid to the first placeholder
+                    int rowsUpdated = preparedStatement.executeUpdate();
+                    setYourBidLabel.setText("Bid placed successfully!");
+                }
+
+                System.out.println(myBid);
+
 
                 if (userDataResult.next()) {
                     String sellerfName = userDataResult.getString("first_name");
@@ -212,6 +249,6 @@ public class itemAuctionController implements Initializable {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-        };
+        }
     }
 }

@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="325fb917-e69e-4a5a-8611-3fa218bc0785" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/userItem.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/itemAuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/itemAuctionController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +31,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.homeApplication">
-    <configuration name="homeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.homeApplication" />
+  <component name="RunManager" selected="Application.itemAuctionApplication">
+    <configuration name="itemAuctionApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.itemAuctionApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -49,6 +51,19 @@
     </configuration>
     <configuration name="myProfileApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.myProfileApplication" />
+      <module name="DealHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dealhub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="roomPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.roomPageApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -88,10 +103,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.homeApplication" />
+        <item itemvalue="Application.itemAuctionApplication" />
         <item itemvalue="Application.myProfileApplication" />
-        <item itemvalue="Application.userItemApplication" />
+        <item itemvalue="Application.roomPageApplication" />
         <item itemvalue="Application.uploadProductApplication" />
+        <item itemvalue="Application.userItemApplication" />
       </list>
     </recent_temporary>
   </component>
