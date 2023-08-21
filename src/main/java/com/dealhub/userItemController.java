@@ -132,7 +132,7 @@ public class userItemController implements Initializable {
                  name.setFont(Font.font("Arial",18));
 
                  Label bidPrice = new Label("$"+price);
-                 bidPrice.setMaxSize(75,17);
+                 bidPrice.setMaxSize(100,17);
                  bidPrice.setLayoutX(75);
                  bidPrice.setLayoutY(305);
                  bidPrice.setFont(Font.font("Arial", FontWeight.BOLD,18));
