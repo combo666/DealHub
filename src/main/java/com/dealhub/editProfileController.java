@@ -47,7 +47,14 @@ public class editProfileController implements Initializable {
     @FXML
     private TextField uID;
     @FXML
+    private Button myProfile;
+    @FXML
     private Label passVerify;
+    @FXML
+    private Button myBidBtn;
+    @FXML
+    private Button uploadProductsBtn;
+
 
     @FXML
     String searchId, firstName, lastName, oPass = "", conPass = "", garbage4 = "";
@@ -148,6 +155,7 @@ public class editProfileController implements Initializable {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
+
         } else if (newPass.getText().isEmpty()) {
             passVerify.setText("Please provide your Password");
         } else {
@@ -178,6 +186,36 @@ public class editProfileController implements Initializable {
     }
 
     @FXML
+    public void setMyProfile() throws IOException {
+        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
+        Parent secondSceneRoot = secondLoader.load();
+        Scene secondScene = new Scene(secondSceneRoot);
+
+        Stage primaryStage = (Stage) homeBtn.getScene().getWindow();
+        primaryStage.setScene(secondScene);
+
+    }
+    @FXML
+    public void setMyBidBtn() throws IOException {
+        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("myProfile.fxml"));
+        Parent secondSceneRoot = secondLoader.load();
+        Scene secondScene = new Scene(secondSceneRoot);
+
+        Stage primaryStage = (Stage) homeBtn.getScene().getWindow();
+        primaryStage.setScene(secondScene);
+
+    }
+    @FXML
+    public void setUploadProductsBtn() throws IOException {
+        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("uploadProduct.fxml"));
+        Parent secondSceneRoot = secondLoader.load();
+        Scene secondScene = new Scene(secondSceneRoot);
+
+        Stage primaryStage = (Stage) homeBtn.getScene().getWindow();
+        primaryStage.setScene(secondScene);
+
+    }
+    @FXML
     public void homeButtonPress() throws IOException {
         FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("home.fxml"));
         Parent secondSceneRoot = secondLoader.load();
@@ -187,6 +225,7 @@ public class editProfileController implements Initializable {
         primaryStage.setScene(secondScene);
 
     }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

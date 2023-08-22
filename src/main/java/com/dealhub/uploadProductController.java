@@ -45,7 +45,7 @@ public class uploadProductController {
 
 
     @FXML
-    private TextArea productDetails;
+    private TextField productDetails;
 
     @FXML
     private TextField productName;
@@ -169,11 +169,21 @@ public class uploadProductController {
 
                 int rowsAffected = preparedStatement.executeUpdate();
                 System.out.println(rowsAffected + " row(s) inserted.");
+
+
+                FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("home.fxml"));
+                Parent secondSceneRoot = secondLoader.load();
+                Scene secondScene = new Scene(secondSceneRoot);
+
+                Stage primaryStage = (Stage) homeBtn.getScene().getWindow();
+                primaryStage.setScene(secondScene);
             } catch (SQLException e) {
                 e.printStackTrace();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
 
-            try {
+        try {
                 if (connection != null) {
                     connection.close();
                     System.out.println("Connection closed.");

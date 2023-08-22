@@ -5,7 +5,7 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.myProfileController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.myProfileController">
    <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -13,9 +13,13 @@
          </image>
       </ImageView>
       <Button fx:id="searchBt" layoutX="717.0" layoutY="83.0" mnemonicParsing="false" opacity="0.0" prefHeight="53.0" prefWidth="650.0" text="Button" />
-      <Button layoutX="73.0" layoutY="761.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="313.0" text="Button" />
-      <Button layoutX="73.0" layoutY="888.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="313.0" text="Button" />
-      <Button layoutX="73.0" layoutY="628.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="313.0" text="Button" />
+      <Button fx:id="uploadProductsBtn" layoutX="58.0" layoutY="848.0" mnemonicParsing="false" onAction="#setUploadProductsBtn" prefHeight="53.0" prefWidth="286.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="myBidBtn" layoutX="58.0" layoutY="946.0" mnemonicParsing="false" prefHeight="61.0" prefWidth="286.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="editProfile" layoutX="58.0" layoutY="725.0" mnemonicParsing="false" onAction="#goToEditProfile" prefHeight="67.0" prefWidth="313.0" style="-fx-background-color: transparent;" />
       <ImageView fitHeight="259.0" fitWidth="255.0" layoutX="99.0" layoutY="294.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="homeBtn" layoutX="1826.0" layoutY="181.0" mnemonicParsing="false" onAction="#homeButtonPress" prefHeight="53.0" prefWidth="50.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="myProfile" layoutX="1826.0" layoutY="288.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="50.0" style="-fx-background-color: transparent;" />
+      <Button layoutX="1826.0" layoutY="397.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="50.0" style="-fx-background-color: transparent;" />
+      <Button layoutX="1826.0" layoutY="500.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="50.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>

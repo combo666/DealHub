@@ -33,6 +33,17 @@ public class myProfileController implements Initializable{
     private Button roomBtn;
     @FXML
     private Button recentBtn;
+    @FXML
+    private Button myBidBtn;
+
+    @FXML
+    private Button myProfile;
+
+    @FXML
+    private Button searchBt;
+
+    @FXML
+    private Button uploadProductsBtn;
 
     @FXML
     public void goToEditProfile() throws Exception{
@@ -44,13 +55,14 @@ public class myProfileController implements Initializable{
         primaryStage.setScene(secondScene);
     }
     @FXML
-    public void goToUploadProduct() throws IOException {
-        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("UploadProduct.fxml"));
+    public void setUploadProductsBtn() throws IOException {
+        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("uploadProduct.fxml"));
         Parent secondSceneRoot = secondLoader.load();
         Scene secondScene = new Scene(secondSceneRoot);
 
-        Stage primaryStage = (Stage) uploadProduct.getScene().getWindow();
+        Stage primaryStage = (Stage) homeBtn.getScene().getWindow();
         primaryStage.setScene(secondScene);
+
     }
     @FXML
     public void homeButtonPress() throws IOException {

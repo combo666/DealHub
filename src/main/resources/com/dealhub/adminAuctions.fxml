@@ -5,6 +5,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
 <AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.adminAuctionsController">
    <children>
@@ -21,5 +22,6 @@
       <Button fx:id="logoutBtn" layoutX="48.0" layoutY="975.0" mnemonicParsing="false" onAction="#setLogoutBtn" prefHeight="55.0" prefWidth="121.0" style="-fx-background-color: transparent;" />
       <Button fx:id="endAuctionBtn" layoutX="1621.0" layoutY="421.0" mnemonicParsing="false" onAction="#setEndAuctionBtn" prefHeight="55.0" prefWidth="158.0" style="-fx-background-color: transparent;" />
       <TextField fx:id="endAuctionTextField" layoutX="1615.0" layoutY="349.0" prefHeight="41.0" prefWidth="252.0" style="-fx-background-color: transparent;" />
+      <VBox fx:id="vBox" layoutX="477.0" layoutY="350.0" prefHeight="200.0" prefWidth="100.0" />
    </children>
 </AnchorPane>

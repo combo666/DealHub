@@ -1,14 +1,21 @@
 package com.dealhub;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -31,18 +38,55 @@ public class homeController implements  Initializable{
     private GridPane roomContainer;
     @FXML
     private ImageView homeImage;
-    Image photo = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithoutLogin.png")));
-
+    @FXML
+    private Button editProfileBtn;
+    @FXML
+    private Button homeLoginBtn;
+    @FXML
+    private Label logedinUserLabel;
+    Image photo1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithoutLogin.png")));
+    Image photo2 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithLogin.png")));
     Connection connection = null;
     String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
     String username = "root";
     String password = "";
     List<itemPost> post;
 
+    @FXML
+    public void setHomeLoginBtn(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (Exception ignored) {
+        }
+
+    }
+
+
+    @FXML
+    public void setEditProfileBtn(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("myProfile.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (Exception ignored) {
+        }
+
+    }
+
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
 
 
         try {
@@ -57,6 +101,32 @@ public class homeController implements  Initializable{
         int col = 0;
         int row = 1;
 
+        _AUserLoginCheck uLoginCheck = new _AUserLoginCheck();
+
+        System.out.println(uLoginCheck.getuLId()+"balle balle");
+
+
+        if(uLoginCheck.getuLId() != null){
+            Statement statement = null;
+            try {
+                statement = connection.createStatement();
+                String sql = "SELECT * FROM `userdata` WHERE 1";
+                ResultSet resultSet = statement.executeQuery(sql);
+
+                while (resultSet.next()){
+                    homeImage.setImage(photo2);
+                    String logedinUName = resultSet.getString("first_name");
+                    logedinUserLabel.setText(logedinUName);
+
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+        }else {
+            homeImage.setImage(photo1);
+        }
+
 
 
         try{
@@ -65,6 +135,7 @@ public class homeController implements  Initializable{
                 fxmlLoader.setLocation(getClass().getResource("item.fxml"));
                 VBox vBox = null;
                 vBox = fxmlLoader.load();
+
 
                 itemController itemController = fxmlLoader.getController();
                 itemController.setData(posts);

@@ -9,38 +9,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.editProfileController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.editProfileController">
    <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@editProfile.png" />
          </image>
       </ImageView>
-      <TextField fx:id="fName" layoutX="598.0" layoutY="269.0" prefHeight="69.0" prefWidth="404.0" style="-fx-background-color: trasnparent;">
+      <TextField fx:id="fName" layoutX="578.0" layoutY="227.0" prefHeight="69.0" prefWidth="404.0" style="-fx-background-color: trasnparent;">
          <font>
             <Font name="Arial" size="18.0" />
          </font>
       </TextField>
-      <TextField fx:id="lName" layoutX="1067.0" layoutY="271.0" prefHeight="69.0" prefWidth="404.0" style="-fx-background-color: trasnparent;">
+      <TextField fx:id="lName" layoutX="1052.0" layoutY="227.0" prefHeight="69.0" prefWidth="404.0" style="-fx-background-color: trasnparent;">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <TextField fx:id="uID" layoutX="598.0" layoutY="398.0" prefHeight="69.0" prefWidth="869.0" style="-fx-background-color: trasnparent;">
+      <TextField fx:id="uID" editable="false" layoutX="578.0" layoutY="351.0" prefHeight="69.0" prefWidth="869.0" style="-fx-background-color: trasnparent;">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <TextField fx:id="contactNumber" layoutX="598.0" layoutY="520.0" prefHeight="69.0" prefWidth="869.0" style="-fx-background-color: trasnparent;">
+      <TextField fx:id="contactNumber" layoutX="578.0" layoutY="483.0" prefHeight="69.0" prefWidth="869.0" style="-fx-background-color: trasnparent;">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Button fx:id="cancelBtn" layoutX="857.0" layoutY="938.0" mnemonicParsing="false" onAction="#CancelButtonPress" opacity="0.0" prefHeight="51.0" prefWidth="173.0" />
-      <Button fx:id="saveBtn" layoutX="1074.0" layoutY="938.0" mnemonicParsing="false" onAction="#editedData" opacity="0.0" prefHeight="51.0" prefWidth="180.0" />
-      <Button fx:id="homeBtn" layoutX="1822.0" layoutY="206.0" mnemonicParsing="false" onAction="#homeButtonPress" opacity="0.0" prefHeight="41.0" prefWidth="52.0" text="Button" />
-      <Label fx:id="passVerify" layoutX="599.0" layoutY="141.0" prefHeight="57.0" prefWidth="570.0" textFill="#eb1717">
+      <Button fx:id="cancelBtn" layoutX="840.0" layoutY="921.0" mnemonicParsing="false" onAction="#CancelButtonPress" opacity="0.0" prefHeight="51.0" prefWidth="173.0" />
+      <Button fx:id="saveBtn" layoutX="1052.0" layoutY="921.0" mnemonicParsing="false" onAction="#editedData" opacity="0.0" prefHeight="51.0" prefWidth="180.0" />
+      <Button fx:id="homeBtn" layoutX="1820.0" layoutY="186.0" mnemonicParsing="false" onAction="#homeButtonPress" opacity="0.0" prefHeight="41.0" prefWidth="52.0" text="Button" />
+      <Label fx:id="passVerify" layoutX="834.0" layoutY="848.0" prefHeight="57.0" prefWidth="623.0" textFill="#eb1717">
          <font>
             <Font name="System Italic" size="24.0" />
          </font></Label>
-      <PasswordField fx:id="confPass" layoutX="598.0" layoutY="649.0" prefHeight="69.0" prefWidth="869.0" />
-      <PasswordField fx:id="newPass" layoutX="598.0" layoutY="776.0" prefHeight="69.0" prefWidth="869.0" />
+      <PasswordField fx:id="confPass" layoutX="579.0" layoutY="616.0" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: transparent;" />
+      <PasswordField fx:id="newPass" layoutX="582.0" layoutY="738.0" prefHeight="57.0" prefWidth="869.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="myProfile" layoutX="1820.0" layoutY="296.0" mnemonicParsing="false" onAction="#setMyProfile" opacity="0.0" prefHeight="41.0" prefWidth="52.0" text="Button" />
+      <Button fx:id="uploadProductsBtn" layoutX="37.0" layoutY="842.0" mnemonicParsing="false" onAction="#setUploadProductsBtn" prefHeight="51.0" prefWidth="284.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="myBidBtn" layoutX="37.0" layoutY="947.0" mnemonicParsing="false" onAction="#setMyBidBtn" prefHeight="51.0" prefWidth="284.0" style="-fx-background-color: transparent;" />
    </children>
 </AnchorPane>
