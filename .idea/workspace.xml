@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="325fb917-e69e-4a5a-8611-3fa218bc0785" name="Changes" comment="">
+    <list default="true" id="a14ff178-7f88-45e1-ac96-a7a95df4a8b0" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,10 +123,10 @@
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DealHub$uploadProductApplication.ic" NAME="uploadProductApplication Coverage Results" MODIFIED="1691852137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DealHub$itemApplication.ic" NAME="itemApplication Coverage Results" MODIFIED="1692501304204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.dealhub.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DealHub$itemApplication.ic" NAME="itemApplication Coverage Results" MODIFIED="1692501304204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DealHub$uploadProductApplication.ic" NAME="uploadProductApplication Coverage Results" MODIFIED="1691852137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.dealhub.*</FILTER>
     </SUITE>
   </component>
