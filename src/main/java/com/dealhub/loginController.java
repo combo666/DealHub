@@ -101,9 +101,9 @@ public class loginController implements Initializable {
                 System.out.println(colid + " " + colpass);
                 if (id.equals(colid) && pass.equals(colpass)) {
 
-                    _AUserLoginCheck uLoginCheck = new _AUserLoginCheck();
+                    _AUserLoginCheck.setuLId(colid);
 
-                    uLoginCheck.setuLId(colid);
+
 
                     found = true;
                     System.out.println("found");

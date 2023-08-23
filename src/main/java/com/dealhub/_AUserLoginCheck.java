@@ -1,23 +1,23 @@
 package com.dealhub;
 
-public class _AUserLoginCheck {
-    public String uLName;
-    public String uLId ;
+class _AUserLoginCheck {
+    private static String uLName;
+    private static String uLId ;
 
 
-    public String getuLName() {
+    public static String getuLName() {
         return uLName;
     }
 
-    public void setuLName(String uLName) {
-        this.uLName = uLName;
+    public static void setuLName(String uLName) {
+        _AUserLoginCheck.uLName = uLName;
     }
 
-    public String getuLId() {
+    public static String getuLId() {
         return uLId;
     }
 
-    public void setuLId(String uLId) {
-        this.uLId = uLId;
+    public static void setuLId(String uLId) {
+        _AUserLoginCheck.uLId = uLId;
     }
 }

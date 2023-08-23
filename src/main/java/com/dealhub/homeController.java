@@ -101,12 +101,12 @@ public class homeController implements  Initializable{
         int col = 0;
         int row = 1;
 
-        _AUserLoginCheck uLoginCheck = new _AUserLoginCheck();
 
-        System.out.println(uLoginCheck.getuLId()+"balle balle");
+        String uLoginCheckId = _AUserLoginCheck.getuLId();
+        System.out.println(uLoginCheckId + "Vujung vajung ");
 
 
-        if(uLoginCheck.getuLId() != null){
+        if(uLoginCheckId != null){
             Statement statement = null;
             try {
                 statement = connection.createStatement();

@@ -5,23 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a14ff178-7f88-45e1-ac96-a7a95df4a8b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/_AUserLoginCheck.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/_AUserLoginCheck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/_AUserLoginCheck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/myProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/myProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/uploadProductApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/uploadProductApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/uploadProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/uploadProductController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminAuctions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminAuctions.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/editProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/editProfile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/editProfile.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/editProfile.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/homePageWith Login.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/homePageWithLogin.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/logIn.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/myProfile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/myProfile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,19 +45,6 @@
   }
 }</component>
   <component name="RunManager" selected="Application.homeApplication">
-    <configuration name="adminAuctionApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.adminAuctionApplication" />
-      <module name="DealHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dealhub.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="homeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.homeApplication" />
       <module name="DealHub" />
@@ -83,8 +58,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="loginApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.loginApplication" />
+    <configuration name="itemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.itemApplication" />
+      <module name="DealHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dealhub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="itemAuctionApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.itemAuctionApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -109,8 +97,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="uploadProductApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.uploadProductApplication" />
+    <configuration name="userItemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.userItemApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -125,10 +113,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.homeApplication" />
-        <item itemvalue="Application.adminAuctionApplication" />
-        <item itemvalue="Application.loginApplication" />
+        <item itemvalue="Application.itemAuctionApplication" />
+        <item itemvalue="Application.itemApplication" />
         <item itemvalue="Application.myProfileApplication" />
-        <item itemvalue="Application.uploadProductApplication" />
+        <item itemvalue="Application.userItemApplication" />
       </list>
     </recent_temporary>
   </component>
