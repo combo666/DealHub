@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.adminUserManagementController">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@adminUserManagement.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="dashBoardBtn" layoutX="14.0" layoutY="292.0" mnemonicParsing="false" onAction="#setDashBoardBtn" prefHeight="56.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="auctionManagementBtn" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#setAuctionManagementBtn" prefHeight="69.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="roomManagementBtn" layoutX="14.0" layoutY="540.0" mnemonicParsing="false" onAction="#setRoomManagementBtn" prefHeight="69.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="adminPostBtn" layoutX="14.0" layoutY="630.0" mnemonicParsing="false" onAction="#setAdminPostBtn" prefHeight="69.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="bidManagementBtn" layoutX="14.0" layoutY="709.0" mnemonicParsing="false" onAction="#setBidManagementBtn" prefHeight="69.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="banTF" layoutX="1501.0" layoutY="813.0" prefHeight="39.0" prefWidth="295.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="banBtn" layoutX="1501.0" layoutY="890.0" mnemonicParsing="false" onAction="#setBanBtn" prefHeight="39.0" prefWidth="140.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="logoutBtn" layoutX="71.0" layoutY="983.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="80.0" style="-fx-background-color: transparent;" />
+   </children>
+</AnchorPane>

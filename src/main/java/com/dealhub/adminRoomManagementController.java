@@ -41,7 +41,7 @@ public class adminRoomManagementController {
     @FXML
     public void setLogoutBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -54,7 +54,7 @@ public class adminRoomManagementController {
     @FXML
     public void setAdminPostBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -67,7 +67,7 @@ public class adminRoomManagementController {
     @FXML
     public void setAuctionManagementBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminAuctions.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -80,7 +80,7 @@ public class adminRoomManagementController {
     @FXML
     public void setBidManagementBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminBidManagement.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -93,7 +93,7 @@ public class adminRoomManagementController {
     @FXML
     public void setDashboardBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -175,7 +175,7 @@ public class adminRoomManagementController {
     @FXML
     public void setUserManagementBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminUserManagement.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

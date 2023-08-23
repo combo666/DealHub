@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.adminBidManagementController">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@adminBidManagement.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="dashboardBtn" layoutX="14.0" layoutY="284.0" mnemonicParsing="false" onAction="#setDashboardBtn" prefHeight="62.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="auctionManagementBtn" layoutX="14.0" layoutY="361.0" mnemonicParsing="false" onAction="#setAuctionManagementBtn" prefHeight="62.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="userManagementBtn" layoutY="448.0" mnemonicParsing="false" onAction="#setUserManagementBtn" prefHeight="62.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="roomManagementBtn" layoutX="14.0" layoutY="534.0" mnemonicParsing="false" onAction="#setRoomManagementBtn" prefHeight="62.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="adminPostBtn" layoutX="6.0" layoutY="625.0" mnemonicParsing="false" onAction="#setAdminPostBtn" prefHeight="62.0" prefWidth="365.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="logoutBtn" layoutX="62.0" layoutY="977.0" mnemonicParsing="false" prefHeight="41.0" prefWidth="98.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="endAuctionBtn" layoutX="1522.0" layoutY="423.0" mnemonicParsing="false" onAction="#setEndAuctionBtn" prefHeight="48.0" prefWidth="157.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="endAuctionTF" layoutX="1526.0" layoutY="349.0" prefHeight="41.0" prefWidth="301.0" style="-fx-background-color: transparent;" />
+   </children>
+</AnchorPane>

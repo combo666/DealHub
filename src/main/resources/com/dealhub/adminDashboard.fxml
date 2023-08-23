@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
@@ -20,17 +21,20 @@
       <Button fx:id="roomManagementBtn" layoutX="2.0" layoutY="538.0" mnemonicParsing="false" onAction="#setRoomManagementBtn" prefHeight="71.0" prefWidth="381.0" style="-fx-background-color: transparent;" />
       <Button fx:id="adminPostBtn" layoutX="-9.0" layoutY="616.0" mnemonicParsing="false" onAction="#setAdminPostBtn" prefHeight="71.0" prefWidth="381.0" style="-fx-background-color: transparent;" />
       <Button fx:id="bidManagementBtn" layoutY="703.0" mnemonicParsing="false" onAction="#setBidManagementBtn" prefHeight="71.0" prefWidth="381.0" style="-fx-background-color: transparent;" />
-      <Label fx:id="pendingPostLabel" layoutX="628.0" layoutY="354.0" prefHeight="100.0" prefWidth="182.0" text="Label">
+      <Label fx:id="pendingPostLabel" layoutX="646.0" layoutY="354.0" prefHeight="100.0" prefWidth="182.0" text="Label">
          <font>
             <Font name="System Bold" size="50.0" />
          </font>
       </Label>
-      <Label fx:id="allBidsLabel" layoutX="1067.0" layoutY="358.0" prefHeight="100.0" prefWidth="182.0" text="Label">
+      <Label fx:id="allBidsLabel" layoutX="1102.0" layoutY="358.0" prefHeight="100.0" prefWidth="182.0" text="Label">
          <font>
             <Font name="System Bold" size="50.0" />
          </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
       </Label>
-      <Label fx:id="allPostLabel" layoutX="1502.0" layoutY="359.0" prefHeight="100.0" prefWidth="182.0" text="Label">
+      <Label fx:id="allPostLabel" layoutX="1541.0" layoutY="359.0" prefHeight="100.0" prefWidth="182.0" text="Label">
          <font>
             <Font name="System Bold" size="50.0" />
          </font>
