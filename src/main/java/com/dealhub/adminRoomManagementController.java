@@ -3,17 +3,24 @@ package com.dealhub;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
 import java.sql.*;
+import java.util.ResourceBundle;
 
-public class adminRoomManagementController {
+public class adminRoomManagementController implements Initializable {
     @FXML
     private Button adminPostBtn;
 
@@ -37,6 +44,9 @@ public class adminRoomManagementController {
 
     @FXML
     private Button userManagementBtn;
+
+    @FXML
+    VBox vBox = new VBox();
 
     @FXML
     public void setLogoutBtn(ActionEvent event) throws IOException {
@@ -123,14 +133,14 @@ public class adminRoomManagementController {
         try {
             assert connection != null;
             Statement statement = connection.createStatement();
-            String sqlQuery = "SELECT * FROM uploadproducts";
+            String sqlQuery = "SELECT * FROM auctionroom";
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
             while (resultSet.next()) {
                 String searchID = resultSet.getString("id");
                 if (searchID.equals(roomTxtField.getText())) {
                     System.out.println("Found");
-                    String sql = "DELETE FROM `uploadproducts` WHERE id=?";
+                    String sql = "DELETE FROM `auctionroom` WHERE id=?";
 
                     PreparedStatement preparedStatement = connection.prepareStatement(sql);
                     preparedStatement.setString(1, roomTxtField.getText());
@@ -185,5 +195,75 @@ public class adminRoomManagementController {
 
         }catch (Exception ignored){}
 
+    }
+
+    @Override
+
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Connection connection = null;
+        String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
+        String username = "root";
+        String password = "";
+
+        try {
+            assert connection != null;
+            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            System.out.println("Connected to the database!");
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            assert  connection != null ;
+            Statement statement = connection.createStatement();
+            String sqlQuery = "SELECT * FROM `auctionroom` WHERE 1";
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+            while (resultSet.next()) {
+                String id = resultSet.getString("id");
+                String name = resultSet.getString("roomname");
+               // String totalPost = resultSet.getString("total_post");
+
+                System.out.println("found");
+
+                AnchorPane anchorPane = new AnchorPane();
+                anchorPane.setMaxSize(860, 25);
+
+                Label idLebel = new Label(id);
+                idLebel.setMaxSize(299, 25);
+                idLebel.setLayoutX(0);
+                idLebel.setFont(Font.font("Arial", 15));
+
+                Label nameLebel = new Label(name);
+                nameLebel.setMaxSize(340, 25);
+                nameLebel.setLayoutX(300);
+                nameLebel.setFont(Font.font("Arial",15));
+
+                /* total post add korar por etar use
+                Label totalPostLebel = new Label("toatalPost");
+                totalPostLebel.setMaxSize(221, 25);
+                totalPostLebel.setLayoutX(640);
+                totalPostLebel.setFont(Font.font("Arial",15));*/
+
+                anchorPane.getChildren().addAll(idLebel,nameLebel);
+                vBox.getChildren().add(anchorPane);
+
+                System.out.println("found");
+
+
+            }
+        } catch (SQLException e) {
+        }
+
+
+        try {
+            if (connection != null) {
+                connection.close();
+                System.out.println("Connection closed.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }
