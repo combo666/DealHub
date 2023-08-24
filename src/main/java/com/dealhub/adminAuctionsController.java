@@ -10,8 +10,10 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -227,44 +229,50 @@ public class adminAuctionsController implements Initializable {
                 String id = resultSet.getString("id");
                 String name = resultSet.getString("product_name");
                 String remTime = resultSet.getString("end_time");
+                String state = resultSet.getString("auction_status");
 
-                System.out.println("foung");
+                System.out.println("found");
 
-                HBox hBox = new HBox();
-                hBox.setMaxSize(1026, 25);
+                AnchorPane anchorPane = new AnchorPane();
+                anchorPane.setMaxSize(1026, 25);
 
                 Label nameLebel = new Label(name);
-                nameLebel.setMaxSize(268, 17);
+                nameLebel.setMaxSize(268, 25);
                 nameLebel.setLayoutX(0);
+                nameLebel.setFont(Font.font("Arial",15));
 
                 Label idLebel = new Label(id);
-                idLebel.setMaxSize(229, 17);
+                idLebel.setMaxSize(229, 25);
                 idLebel.setLayoutX(268);
+                idLebel.setFont(Font.font("Arial",15));
 
-                Label bidsLebel = new Label(" ");
-                bidsLebel.setMaxSize(193, 17);
+                Label bidsLebel = new Label("empty");
+                bidsLebel.setMaxSize(193, 25);
                 bidsLebel.setLayoutX(497);
+                bidsLebel.setFont(Font.font("Arial",15));
 
-                Label stateLebel = new Label(" ");
-                stateLebel.setMaxSize(178, 17);
+                Label stateLebel = new Label(state);
+                stateLebel.setMaxSize(178, 25);
                 stateLebel.setLayoutX(690);
+                stateLebel.setFont(Font.font("Arial",15));
 
                 Label timeLebel = new Label(remTime);
-                stateLebel.setMaxSize(158, 17);
+                stateLebel.setMaxSize(158, 25);
                 timeLebel.setLayoutX(868);
+                timeLebel.setFont(Font.font("Arial",15));
 
-                System.out.println("foung");
+                System.out.println("found");
 
-                hBox.getChildren().add(nameLebel);
+                /*hBox.getChildren().add(nameLebel);
                 hBox.getChildren().add(idLebel);
                 hBox.getChildren().add(bidsLebel);
                 hBox.getChildren().add(stateLebel);
-                hBox.getChildren().add(timeLebel);
+                hBox.getChildren().add(timeLebel);*/
 
+                anchorPane.getChildren().addAll(nameLebel,idLebel,bidsLebel,stateLebel,timeLebel);
+                vBox.getChildren().add(anchorPane);
 
-                vBox.getChildren().add(hBox);
-
-                System.out.println("foung");
+                System.out.println("found");
 
 
             }
