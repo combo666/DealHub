@@ -4,25 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a14ff178-7f88-45e1-ac96-a7a95df4a8b0" name="Changes" comment="">
+    <list default="true" id="d8996091-d4f6-4dea-b425-7ed76bd635d5" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminRoomManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminRoomManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminRoomManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminRoomManagement.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="RunManager">
-    <configuration name="adminUserManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.adminUserManagementApplication" />
+    <configuration name="adminRoomManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.adminRoomManagementApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -36,7 +32,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.adminUserManagementApplication" />
+        <item itemvalue="Application.adminRoomManagementApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -44,10 +40,10 @@
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DealHub$itemApplication.ic" NAME="itemApplication Coverage Results" MODIFIED="1692501304204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DealHub$uploadProductApplication.ic" NAME="uploadProductApplication Coverage Results" MODIFIED="1691852137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.dealhub.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DealHub$uploadProductApplication.ic" NAME="uploadProductApplication Coverage Results" MODIFIED="1691852137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DealHub$itemApplication.ic" NAME="itemApplication Coverage Results" MODIFIED="1692501304204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.dealhub.*</FILTER>
     </SUITE>
   </component>

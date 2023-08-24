@@ -5,8 +5,9 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.adminRoomManagementController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.adminRoomManagementController">
    <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -21,5 +22,6 @@
       <Button fx:id="logoutBtn" layoutX="55.0" layoutY="973.0" mnemonicParsing="false" onAction="#setLogoutBtn" prefHeight="59.0" prefWidth="105.0" style="-fx-background-color: transparent;" />
       <Button fx:id="deleteBtn" layoutX="1448.0" layoutY="426.0" mnemonicParsing="false" onAction="#setDeleteBtn" prefHeight="44.0" prefWidth="147.0" style="-fx-background-color: transparent;" />
       <TextField fx:id="roomTxtField" layoutX="1446.0" layoutY="351.0" prefHeight="37.0" prefWidth="303.0" style="-fx-background-color: transparent;" />
+      <VBox fx:id="vBox" layoutX="514.0" layoutY="342.0" prefHeight="700.0" prefWidth="860.0" spacing="20.0" />
    </children>
 </AnchorPane>
