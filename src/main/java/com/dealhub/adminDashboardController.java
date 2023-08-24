@@ -50,7 +50,7 @@ public class adminDashboardController implements Initializable {
     @FXML
     public void setAdminPostBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminPost.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -117,7 +117,8 @@ public class adminDashboardController implements Initializable {
     @FXML
     public void setLogoutBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
+            _AUserLoginCheck.setuLId(null);
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("home.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -156,9 +157,9 @@ public class adminDashboardController implements Initializable {
             String sqlQueryPendingPost = "SELECT COUNT(*) AS rowCount FROM uploadproducts WHERE pending_status = 'yes'";
             ResultSet resultSetPendingPost = statementPendingPost.executeQuery(sqlQueryPendingPost);
 
-            Statement statementAllPost = connection.createStatement();
-            String sqlQueryAllPost = "SELECT COUNT(*) AS rowCount FROM uploadproducts";
-            ResultSet resultSetAllPost = statementAllPost.executeQuery(sqlQueryAllPost);
+            Statement statementAllRoom = connection.createStatement();
+            String sqlQueryAllRoom = "SELECT COUNT(*) AS rowCount FROM auctionroom";
+            ResultSet resultSetAllRoom = statementAllRoom.executeQuery(sqlQueryAllRoom);
 
 
             if (resultSetAllBids.next()) {
@@ -173,8 +174,8 @@ public class adminDashboardController implements Initializable {
                 pendingPostLabel.setText(rowCounti);
             }
 
-            if (resultSetAllPost.next()) {
-                int rowCount = resultSetAllPost.getInt("rowCount");
+            if (resultSetAllRoom.next()) {
+                int rowCount = resultSetAllRoom.getInt("rowCount");
                 String rowCounti= rowCount+" ";
                 allPostLabel.setText(rowCounti);
             }

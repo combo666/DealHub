@@ -40,7 +40,21 @@ public class adminBidManagementController {
     @FXML
     public void setAdminPostBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminPost.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        }catch (Exception ignored){}
+
+    }
+    @FXML
+    public void setLogoutBtn(ActionEvent event) throws IOException {
+        try {
+            _AUserLoginCheck.setuLId(null);
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("home.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

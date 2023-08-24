@@ -99,6 +99,17 @@ public class loginController implements Initializable {
                 String colpass = resultSet.getString("newPassword");
                 // Process other columns...
                 System.out.println(colid + " " + colpass);
+                if(id.equals("admin") && pass.equals("admin")){
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
+                        Parent root = (Parent) fxmlLoader.load();
+                        Stage stage = new Stage();
+                        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+                        stage.setScene(new Scene(root));
+                        stage.show();
+
+                    }catch (Exception ignored){}
+                }
                 if (id.equals(colid) && pass.equals(colpass)) {
 
                     _AUserLoginCheck.setuLId(colid);

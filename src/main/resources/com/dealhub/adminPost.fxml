@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.adminPostController">
+   <children>
+      <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@adminPost.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="dashBoardBtn" layoutX="14.0" layoutY="288.0" mnemonicParsing="false" onAction="#setDashBoardBtn" prefHeight="55.0" prefWidth="370.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="auctionManagementBtn" layoutX="7.0" layoutY="369.0" mnemonicParsing="false" onAction="#setAuctionManagementBtn" prefHeight="55.0" prefWidth="370.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="userManagementBtn" layoutX="7.0" layoutY="452.0" mnemonicParsing="false" onAction="#setUserManagementBtn" prefHeight="55.0" prefWidth="370.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="roomManagementBtn" layoutX="14.0" layoutY="540.0" mnemonicParsing="false" onAction="#setRoomManagementBtn" prefHeight="55.0" prefWidth="370.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="bidManagementBtn" layoutX="7.0" layoutY="709.0" mnemonicParsing="false" onAction="#setBidManagementBtn" prefHeight="55.0" prefWidth="370.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="submitBtn" layoutX="1084.0" layoutY="757.0" mnemonicParsing="false" onAction="#setSubmitBtn" prefHeight="55.0" prefWidth="182.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="roomNameTF" layoutX="783.0" layoutY="331.0" prefHeight="55.0" prefWidth="508.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="roomDetailsTF" layoutX="783.0" layoutY="568.0" prefHeight="55.0" prefWidth="508.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="chooseAnImageBtn" layoutX="789.0" layoutY="448.0" mnemonicParsing="false" onAction="#setChooseAnImageBtn" prefHeight="55.0" prefWidth="493.0" style="-fx-background-color: transparent;" />
+      <Label fx:id="chooseAnImageLabel" disable="true" layoutX="790.0" layoutY="448.0" prefHeight="55.0" prefWidth="144.0" text="Choose an image">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="logoutBtn" layoutX="73.0" layoutY="982.0" mnemonicParsing="false" onAction="#setLogoutBtn" prefHeight="32.0" prefWidth="78.0" style="-fx-background-color: transparent;" />
+   </children>
+</AnchorPane>

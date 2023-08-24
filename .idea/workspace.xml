@@ -5,18 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a14ff178-7f88-45e1-ac96-a7a95df4a8b0" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminBidManagement.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminUserManagement.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminPostApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminPostController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminPost.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminDashboardController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminRoomManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminRoomManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminUserManagement.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminUserManagement.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/creatAccountController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/loginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminBidManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminBidManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminDashboard.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminDashboard.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminUserManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminUserManagement.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/books.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/homePageWithoutLogin.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/homePageWithoutLogin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/ss.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -53,7 +60,7 @@
     &quot;git-widget-placeholder&quot;: &quot;main&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.adminDashboardApplication">
+  <component name="RunManager" selected="Application.homeApplication">
     <configuration name="adminDashboardApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.adminDashboardApplication" />
       <module name="DealHub" />
@@ -121,8 +128,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.adminDashboardApplication" />
         <item itemvalue="Application.homeApplication" />
+        <item itemvalue="Application.adminDashboardApplication" />
         <item itemvalue="Application.itemAuctionApplication" />
         <item itemvalue="Application.itemApplication" />
         <item itemvalue="Application.myProfileApplication" />

@@ -40,6 +40,7 @@ public class creatAccountController {
     private Button signupBt;
     @FXML
     private Button loginBt;
+    boolean sceneChange = false;
 
     Image photoId = new Image(Objects.requireNonNull(getClass().getResourceAsStream("creatAccountIncorrectPage.png")));
     Image photoPass = new Image(Objects.requireNonNull(getClass().getResourceAsStream("creatAccountIncorrectPassPage.png")));
@@ -61,6 +62,20 @@ public class creatAccountController {
     @FXML
     public void signup(ActionEvent event) throws Exception {
         createAcc();
+
+        if(sceneChange){
+            try {
+                _AUserLoginCheck.setuLId(null);
+                FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+                Parent root = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } catch (Exception ignored) {
+            }
+        }
     }
 
     private void createAcc() throws Exception{
@@ -147,6 +162,10 @@ public class creatAccountController {
 
                 int rowsAffected = preparedStatement.executeUpdate();
                 System.out.println(rowsAffected + " row(s) inserted.");
+
+                sceneChange = true;
+
+
 
 
             } catch (SQLException e) {

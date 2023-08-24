@@ -21,13 +21,8 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.*;
 import java.util.*;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.ResultSet;
 
 
 public class homeController implements  Initializable{
@@ -45,7 +40,7 @@ public class homeController implements  Initializable{
     @FXML
     private Label logedinUserLabel;
     Image photo1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithoutLogin.png")));
-    Image photo2 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithLogin.png")));
+    Image photo2 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithoutLogin.png")));
     Connection connection = null;
     String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
     String username = "root";
@@ -103,27 +98,25 @@ public class homeController implements  Initializable{
 
 
         String uLoginCheckId = _AUserLoginCheck.getuLId();
-        System.out.println(uLoginCheckId + "Vujung vajung ");
 
-
-        if(uLoginCheckId != null){
-            Statement statement = null;
+        if (uLoginCheckId != null) {
             try {
-                statement = connection.createStatement();
-                String sql = "SELECT * FROM `userdata` WHERE 1";
-                ResultSet resultSet = statement.executeQuery(sql);
+                String sql = "SELECT * FROM `userdata` WHERE id = ?";
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                preparedStatement.setString(1, uLoginCheckId);
 
-                while (resultSet.next()){
+                ResultSet resultSet = preparedStatement.executeQuery();
+
+                while (resultSet.next()) {
                     homeImage.setImage(photo2);
                     String logedinUName = resultSet.getString("first_name");
                     logedinUserLabel.setText(logedinUName);
-
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
-        }else {
+        }
+        else {
             homeImage.setImage(photo1);
         }
 
@@ -185,7 +178,7 @@ public class homeController implements  Initializable{
 
                 post = new itemPost();
                 post.setItemName(colName);
-                post.setItemImage(colImage);
+                post.setItemImage("_"+colImage);
                 ls.add(post);
             }
         }catch (Exception e){

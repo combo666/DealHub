@@ -41,7 +41,8 @@ public class adminRoomManagementController {
     @FXML
     public void setLogoutBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
+            _AUserLoginCheck.setuLId(null);
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("home.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -54,7 +55,7 @@ public class adminRoomManagementController {
     @FXML
     public void setAdminPostBtn(ActionEvent event) throws IOException {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminDashboard.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminPost.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
