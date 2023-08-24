@@ -3,16 +3,22 @@ package com.dealhub;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.*;
+import java.util.ResourceBundle;
 
-public class adminUserManagementController {
+public class adminUserManagementController implements Initializable {
     @FXML
     private Button adminPostBtn;
 
@@ -36,6 +42,11 @@ public class adminUserManagementController {
 
     @FXML
     private Button roomManagementBtn;
+
+    @FXML
+    public VBox vBox = new VBox();
+   /* @FXML
+    public ScrollPane scrollPane =new ScrollPane(vBox);*/
 
     @FXML
     public void setAdminPostBtn(ActionEvent event) throws IOException {
@@ -123,5 +134,85 @@ public class adminUserManagementController {
     }
 
 
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Connection connection = null;
+        String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
+        String username = "root";
+        String password = "";
 
-}
+        try {
+            assert connection != null;
+            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            System.out.println("Connected to the database!");
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            assert  connection != null ;
+            Statement statement = connection.createStatement();
+            String sqlQuery = "SELECT * FROM `userdata` WHERE 1";
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+
+            while (resultSet.next()) {
+
+                String name = resultSet.getString("first_name");
+                String id = resultSet.getString("id");
+                String balane = resultSet.getString("user_balance");
+
+                System.out.println("found");
+
+                AnchorPane anchorPane = new AnchorPane();
+                anchorPane.setMaxSize(1226, 25);
+
+                Label nameLebel = new Label(name);
+                nameLebel.setMaxSize(284, 25);
+                nameLebel.setLayoutX(0);
+                nameLebel.setFont(Font.font("Arial",15));
+
+                Label idLebel = new Label(id);
+                idLebel.setMaxSize(284, 25);
+                idLebel.setLayoutX(284);
+                idLebel.setFont(Font.font("Arial",15));
+
+                Label balanceLebel = new Label(balane);
+                balanceLebel.setMaxSize(284, 25);
+                balanceLebel.setLayoutX(568);
+                balanceLebel.setFont(Font.font("Arial",15));
+
+                Label postLebel = new Label();
+                postLebel.setMaxSize(257, 25);
+                postLebel.setLayoutX(852);
+                postLebel.setFont(Font.font("Arial",15));
+
+                Label winLebel = new Label();
+                winLebel.setMaxSize(117, 25);
+                winLebel.setLayoutX(1109);
+                winLebel.setFont(Font.font("Arial",15));
+
+                System.out.println("found");
+
+                anchorPane.getChildren().addAll(nameLebel,idLebel,balanceLebel,postLebel,winLebel);
+                vBox.getChildren().add(anchorPane);
+                //scrollPane.getChildren().add(vBox);
+
+                System.out.println("found");
+
+            }
+        } catch (SQLException e) {
+        }
+
+
+        try {
+            if (connection != null) {
+                connection.close();
+                System.out.println("Connection closed.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    }
+

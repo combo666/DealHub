@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a14ff178-7f88-45e1-ac96-a7a95df4a8b0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminAuctions.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminAuctions.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminUserManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminUserManagement.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,9 +113,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.adminUserManagementApplication" />
+        <item itemvalue="Application.adminAuctionApplication" />
         <item itemvalue="Application.adminRoomManagementApplication" />
         <item itemvalue="Application.adminPostApplication" />
-        <item itemvalue="Application.adminAuctionApplication" />
         <item itemvalue="Application.roomPageApplication" />
       </list>
     </recent_temporary>
