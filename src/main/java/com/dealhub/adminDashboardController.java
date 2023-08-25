@@ -48,6 +48,12 @@ public class adminDashboardController implements Initializable {
     private Button logoutBtn;
 
     @FXML
+    private Button pendingPostBtn;
+
+    @FXML
+    private Button pendingPostBtn1;
+
+    @FXML
     public void setAdminPostBtn(ActionEvent event) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminPost.fxml"));
@@ -129,7 +135,32 @@ public class adminDashboardController implements Initializable {
 
     }
 
+    @FXML
+    public void setPendingPostBtn(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("pendingPost.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
 
+        }catch (Exception ignored){}
+    }
+
+    @FXML
+    public void setPendingPostBtn1(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("pendingPost.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        }catch (Exception ignored){}
+
+    }
 
 
     @Override

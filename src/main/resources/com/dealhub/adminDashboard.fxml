@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.adminDashboardController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.adminDashboardController">
    <children>
       <ImageView fx:id="dashboardImage" fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -45,5 +45,7 @@
         </content>
       </ScrollPane>
       <Button fx:id="logoutBtn" layoutX="55.0" layoutY="980.0" mnemonicParsing="false" onAction="#setLogoutBtn" prefHeight="46.0" prefWidth="118.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="pendingPostBtn" layoutX="549.0" layoutY="437.0" mnemonicParsing="false" onAction="#setPendingPostBtn" opacity="0.0" prefHeight="29.0" prefWidth="237.0" style="-fx-background-color: transparent;" text="Button" />
+      <Button fx:id="pendingPostBtn1" layoutX="493.0" layoutY="491.0" mnemonicParsing="false" onAction="#setPendingPostBtn1" opacity="0.0" prefHeight="29.0" prefWidth="125.0" style="-fx-background-color: transparent;" text="Button" />
    </children>
 </AnchorPane>
