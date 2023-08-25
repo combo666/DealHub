@@ -8,7 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/roomPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/roomPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/roomPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/roomPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
     "project.structure.side.proportion": "0.0"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.userItemApplication">
+  <component name="RunManager" selected="Application.roomPageApplication">
     <configuration name="itemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.itemApplication" />
       <module name="DealHub" />
@@ -65,8 +64,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="roomPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.roomPageApplication" />
+    <configuration name="pendingPostApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.pendingPostApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -78,8 +77,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="uploadProductApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.uploadProductApplication" />
+    <configuration name="roomPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.roomPageApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -106,11 +105,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.roomPageApplication" />
+        <item itemvalue="Application.pendingPostApplication" />
         <item itemvalue="Application.userItemApplication" />
         <item itemvalue="Application.itemAuctionApplication" />
         <item itemvalue="Application.itemApplication" />
-        <item itemvalue="Application.roomPageApplication" />
-        <item itemvalue="Application.uploadProductApplication" />
       </list>
     </recent_temporary>
   </component>

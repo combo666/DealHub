@@ -124,6 +124,7 @@ public class userItemController implements Initializable {
                 String itemImg = resultSet.getString("product_image");
                 String itemName = resultSet.getString("product_name");
                 String price = resultSet.getString("product_cost");
+                String room= resultSet.getString("category");
 
                 Label name = new Label(itemName);
                 name.setPrefSize(250, 55);
@@ -170,13 +171,22 @@ public class userItemController implements Initializable {
                         ImageView productImg = new ImageView(image);
                         productImg.setFitWidth(250);
                         productImg.setFitHeight(245);
-
-                        anchorPane.getChildren().add(productImg);
-                        anchorPane.getChildren().add(name);
-                        anchorPane.getChildren().add(placeBidBtn);
-                        anchorPane.getChildren().add(bidPrice);
-                        tilePane.getChildren().add(anchorPane);
                         System.out.println("found");
+
+                        if(roomPageController.deliveredRoomName.equals(room)){
+                            anchorPane.getChildren().add(productImg);
+                            anchorPane.getChildren().add(name);
+                            anchorPane.getChildren().add(placeBidBtn);
+                            anchorPane.getChildren().add(bidPrice);
+                            tilePane.getChildren().add(anchorPane);
+                        }
+                        else{
+                            Label noItem = new Label("No Items Available");
+                            noItem.setFont(Font.font("Arial",20));
+                            tilePane.getChildren().add(noItem);
+                            System.out.println("NO such room");
+                        }
+
 
                     } else {
                         System.out.println("Image not found: " + absoluteImagePath);

@@ -59,6 +59,8 @@ public class roomPageController implements Initializable {
     @FXML
     TilePane tilePane = new TilePane();
 
+    public static String deliveredRoomName;
+
 
     @FXML
     public void setHomeBtn(ActionEvent event)throws IOException {
@@ -130,6 +132,19 @@ public class roomPageController implements Initializable {
                 insideRoomBtn.setPrefSize(250,333);
                 insideRoomBtn.setLayoutX(0);
                 insideRoomBtn.setOpacity(0);
+                insideRoomBtn.setOnAction(e->{
+                    deliveredRoomName=roomName;
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("userItem.fxml"));
+                        Parent root = (Parent) fxmlLoader.load();
+                        Stage stage = new Stage();
+                        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                        stage.setScene(new Scene(root));
+                        stage.show();
+
+                    } catch (Exception ignored) {
+                    }
+                });
 
                 if (roomImg != null) {
                     String absoluteImagePath = "_" + roomImg;
