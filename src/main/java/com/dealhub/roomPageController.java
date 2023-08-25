@@ -5,17 +5,19 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ColorPicker;
+import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.TilePane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
@@ -103,22 +105,31 @@ public class roomPageController implements Initializable {
             Statement statement = connection.createStatement();
             String sqlQuery = "SELECT * FROM auctionroom";
             ResultSet resultSet = statement.executeQuery(sqlQuery);
-            System.out.println("herea");
+            System.out.println("here");
 
             while (resultSet.next()) {
 
                 AnchorPane anchorPane = new AnchorPane();
                 anchorPane.setMaxSize(250,333);
 
+
                 String roomImg = resultSet.getString("roomimage");
                 String roomName= resultSet.getString("roomname");
 
-                Button nameButton = new Button(roomName);
-                nameButton.setMaxSize(250,25);
-                nameButton.setLayoutX(0);
-                nameButton.setLayoutY(294);
-                nameButton.setFont(Font.font("Arial",15));
-                nameButton.setTextAlignment(TextAlignment.CENTER);
+                Label nameLabel = new Label(roomName);
+                nameLabel.setPrefWidth(250);
+                nameLabel.setPrefHeight(25);
+                nameLabel.setAlignment(Pos.BASELINE_CENTER);
+                nameLabel.setLayoutX(0);
+                nameLabel.setLayoutY(294);
+                nameLabel.setFont(Font.font("Arial", FontWeight.BOLD,15));
+                nameLabel.setUnderline(true);
+                //nameLabel.setTextAlignment(TextAlignment.CENTER);
+
+                Button insideRoomBtn = new Button();
+                insideRoomBtn.setPrefSize(250,333);
+                insideRoomBtn.setLayoutX(0);
+                insideRoomBtn.setOpacity(0);
 
                 if (roomImg != null) {
                     String absoluteImagePath = "_" + roomImg;
@@ -131,8 +142,7 @@ public class roomPageController implements Initializable {
                         roomImage.setFitHeight(281);
                         roomImage.setLayoutX(0);
 
-                        anchorPane.getChildren().add(roomImage);
-                        anchorPane.getChildren().add(nameButton);
+                        anchorPane.getChildren().addAll(roomImage,nameLabel,insideRoomBtn);
 
                         tilePane.getChildren().add(anchorPane);
                         System.out.println("found");

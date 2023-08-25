@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -46,7 +47,7 @@ public class userItemController implements Initializable {
     String username = "root";
     String password = "";
 
-    public userItemController(){
+    public userItemController() {
 
     }
 
@@ -109,39 +110,56 @@ public class userItemController implements Initializable {
             e.printStackTrace();
         }
 
-        try{
+        try {
             Statement statement = connection.createStatement();
             String sqlQuery = "SELECT * FROM uploadproducts";
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
-            while(resultSet.next()){
+            while (resultSet.next()) {
 
                 AnchorPane anchorPane = new AnchorPane();
                 anchorPane.setMaxWidth(250);
                 anchorPane.setMaxHeight(400);
 
                 String itemImg = resultSet.getString("product_image");
-                String itemName= resultSet.getString("product_name");
+                String itemName = resultSet.getString("product_name");
                 String price = resultSet.getString("product_cost");
 
-                 Label name= new Label(itemName);
-                 name.setMaxSize(250,55);
-                 name.setLayoutX(0);
-                 name.setLayoutY(255);
-                 name.setTextAlignment(TextAlignment.CENTER);
-                 name.setFont(Font.font("Arial",18));
+                Label name = new Label(itemName);
+                name.setPrefSize(250, 55);
+                name.setLayoutX(0);
+                name.setLayoutY(255);
+                name.setAlignment(Pos.BASELINE_CENTER);
+                //name.setTextAlignment(TextAlignment.CENTER);
+                name.setFont(Font.font("Arial", 18));
 
-                 Label bidPrice = new Label("$"+price);
-                 bidPrice.setMaxSize(100,17);
-                 bidPrice.setLayoutX(75);
-                 bidPrice.setLayoutY(305);
-                 bidPrice.setFont(Font.font("Arial", FontWeight.BOLD,18));
+                Label bidPrice = new Label("$" + price);
+                bidPrice.setPrefSize(100, 17);
+                bidPrice.setLayoutX(75);
+                bidPrice.setLayoutY(305);
+                bidPrice.setFont(Font.font("Arial", FontWeight.BOLD, 18));
+                bidPrice.setAlignment(Pos.BASELINE_CENTER);
 
-                 Button placeBidBtn = new Button("Place your bid");
-                 placeBidBtn.setMaxSize(201,25);
-                 placeBidBtn.setLayoutX(26);
-                 placeBidBtn.setLayoutY(380);
-                 
+
+                Button placeBidBtn = new Button("Place your bid");
+                placeBidBtn.setPrefSize(201, 25);
+                placeBidBtn.setLayoutX(26);
+                placeBidBtn.setLayoutY(380);
+                placeBidBtn.setAlignment(Pos.BASELINE_CENTER);
+
+                placeBidBtn.setOnAction(e->{
+                    try {
+                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("itemAuction.fxml"));
+                        Parent root = (Parent) fxmlLoader.load();
+                        Stage stage = new Stage();
+                        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                        stage.setScene(new Scene(root));
+                        stage.show();
+
+                    } catch (Exception ignored) {
+                    }
+                });
+
 
                 if (itemImg != null) {
                     String absoluteImagePath = "_" + itemImg;
@@ -169,7 +187,7 @@ public class userItemController implements Initializable {
             }
 
 
-        }catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
