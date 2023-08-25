@@ -9,11 +9,18 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.TilePane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
+import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.net.URL;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -46,6 +53,9 @@ public class roomPageController implements Initializable {
     Connection connection = null;
     @FXML
     private GridPane itemContainer;
+
+    @FXML
+    TilePane tilePane = new TilePane();
 
 
     @FXML
@@ -88,34 +98,55 @@ public class roomPageController implements Initializable {
             e.printStackTrace();
         }
 
-        post = new ArrayList<>(getPosts());
-        int col = 0;
-        int row = 1;
 
+       try {
+            Statement statement = connection.createStatement();
+            String sqlQuery = "SELECT * FROM auctionroom";
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+            System.out.println("herea");
 
+            while (resultSet.next()) {
 
-        try{
-            for (itemPost posts : post) {
-                FXMLLoader fxmlLoader = new FXMLLoader();
-                fxmlLoader.setLocation(getClass().getResource("item.fxml"));
-                VBox vBox = null;
-                vBox = fxmlLoader.load();
+                AnchorPane anchorPane = new AnchorPane();
+                anchorPane.setMaxSize(250,333);
 
-                itemController itemController = fxmlLoader.getController();
-                itemController.setData(posts);
+                String roomImg = resultSet.getString("roomimage");
+                String roomName= resultSet.getString("roomname");
 
-                if(col == 4){
-                    col=0;
-                    ++row;
+                Button nameButton = new Button(roomName);
+                nameButton.setMaxSize(250,25);
+                nameButton.setLayoutX(0);
+                nameButton.setLayoutY(294);
+                nameButton.setFont(Font.font("Arial",15));
+                nameButton.setTextAlignment(TextAlignment.CENTER);
+
+                if (roomImg != null) {
+                    String absoluteImagePath = "_" + roomImg;
+                    InputStream imageStream = getClass().getResourceAsStream(absoluteImagePath);
+                    if (imageStream != null) {
+                        Image image = new Image(imageStream);
+
+                        ImageView roomImage = new ImageView(image);
+                        roomImage.setFitWidth(250);
+                        roomImage.setFitHeight(281);
+                        roomImage.setLayoutX(0);
+
+                        anchorPane.getChildren().add(roomImage);
+                        anchorPane.getChildren().add(nameButton);
+
+                        tilePane.getChildren().add(anchorPane);
+                        System.out.println("found");
+
+                    } else {
+                        System.out.println("Image not found: " + absoluteImagePath);
+                    }
+                } else {
+                    System.out.println("No image specified.");
                 }
-                itemContainer.add(vBox,col++,row);
-                GridPane.setMargin(vBox,new Insets(10));
-
 
             }
-        }catch(Exception e){
-            System.out.println(e);
-        }
+        }catch (Exception e){}
+
 
         try {
             if (connection != null) {
@@ -127,37 +158,4 @@ public class roomPageController implements Initializable {
         }
     }
 
-    public List<itemPost> getPosts() {
-        List<itemPost> ls = new ArrayList<>();
-
-        itemPost post;
-
-        String roomId,roomName = null,roomImage;
-
-        try{
-            Statement statement = connection.createStatement();
-            String sqlQuery = "SELECT * FROM auctionroom";
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
-            System.out.println("herea");
-
-            while (resultSet.next()) {
-
-                String colId = resultSet.getString("id");
-                String colName = resultSet.getString("roomname");
-                String colImage = resultSet.getString("roomimage");
-
-                System.out.println(resultSet.getInt(1));
-
-                post = new itemPost();
-                post.setItemName(colName);
-                post.setItemImage(colImage);
-                ls.add(post);
-                System.out.println("Pushing..\n");
-            }
-        }catch (Exception e){
-            System.out.println(e);
-        }
-
-        return ls;
-    }
 }

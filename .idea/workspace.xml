@@ -4,103 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d8996091-d4f6-4dea-b425-7ed76bd635d5" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminBidManagement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/adminBidManagement.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="722b20da-cd63-4e3d-bb6c-b4632e57e9df" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-        <option value="FxmlFile" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2USFp5aqqqyEyJayINqSOHyIQXs" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Tanvin/Downloads/mysql-connector-java-8.0.28 (1).jar&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;
-  }
-}</component>
-  <component name="RunManager" selected="Application.adminBidManagementApplication">
-    <configuration name="adminBidManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.adminBidManagementApplication" />
-      <module name="DealHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dealhub.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="adminRoomManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.adminRoomManagementApplication" />
-      <module name="DealHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dealhub.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="itemAuctionApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.itemAuctionApplication" />
-      <module name="DealHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dealhub.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="uploadProductApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.uploadProductApplication" />
-      <module name="DealHub" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.dealhub.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="userItemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.userItemApplication" />
+  <component name="RunManager">
+    <configuration name="pendingPostApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.pendingPostApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -114,30 +32,18 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.adminBidManagementApplication" />
-        <item itemvalue="Application.itemAuctionApplication" />
-        <item itemvalue="Application.userItemApplication" />
-        <item itemvalue="Application.adminRoomManagementApplication" />
-        <item itemvalue="Application.uploadProductApplication" />
+        <item itemvalue="Application.pendingPostApplication" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="d8996091-d4f6-4dea-b425-7ed76bd635d5" name="Changes" comment="" />
-      <created>1692925262551</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1692925262551</updated>
-    </task>
     <servers />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/DealHub$itemApplication.ic" NAME="itemApplication Coverage Results" MODIFIED="1692501304204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DealHub$uploadProductApplication.ic" NAME="uploadProductApplication Coverage Results" MODIFIED="1691852137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.dealhub.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/DealHub$uploadProductApplication.ic" NAME="uploadProductApplication Coverage Results" MODIFIED="1691852137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/DealHub$itemApplication.ic" NAME="itemApplication Coverage Results" MODIFIED="1692501304204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.dealhub.*</FILTER>
     </SUITE>
   </component>
