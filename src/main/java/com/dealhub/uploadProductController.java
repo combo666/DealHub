@@ -9,6 +9,8 @@ package com.dealhub;
         import java.nio.file.Paths;
         import java.nio.file.StandardCopyOption;
         import java.sql.*;
+        import java.time.LocalDateTime;
+        import java.time.temporal.ChronoUnit;
         import java.util.Objects;
         import java.util.ResourceBundle;
 
@@ -142,8 +144,13 @@ public class uploadProductController {
             String pCategory = category.getText();
             String pCName = companyName.getText();
             String pCost = productCost.getText();
-            String eTime = endHour.getText();
+            String sTime = endHour.getText();
+            long eTime = Long.parseLong(sTime);
             String pDetails = productDetails.getText();
+
+            LocalDateTime currentTimestamp = LocalDateTime.now();
+            LocalDateTime endTimestamp = currentTimestamp.plus(eTime, ChronoUnit.MINUTES);
+            Timestamp sqlEndTimestamp = Timestamp.valueOf(endTimestamp);
 
             try {
                 connection = DriverManager.getConnection(jdbcUrl, username, password);
@@ -153,7 +160,7 @@ public class uploadProductController {
             }
 
             try {
-                String sqlQuery = "INSERT INTO `uploadproducts`(`uploader_id`, `product_name`, `category`, `product_cost`, `company_name`, `end_time`, `product_details`, `product_image`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+                String sqlQuery = "INSERT INTO `uploadproducts`(`uploader_id`, `product_name`, `category`, `product_cost`, `current_bid`, `company_name`, `end_time`, `auction_status`, `pending_status`, `product_details`, `product_image`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
                 assert connection != null;
                 PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
@@ -162,10 +169,13 @@ public class uploadProductController {
                 preparedStatement.setString(2, pName);
                 preparedStatement.setString(3, pCategory);
                 preparedStatement.setString(4, pCost);
-                preparedStatement.setString(5, pCName);
-                preparedStatement.setString(6, eTime);
-                preparedStatement.setString(7, pDetails);
-                preparedStatement.setString(8, fileNameWithoutSpaces);
+                preparedStatement.setString(5, "0");  // Set current_bid to initial value
+                preparedStatement.setString(6, pCName);
+                preparedStatement.setTimestamp(7, sqlEndTimestamp);
+                preparedStatement.setString(8, "yes");  // Set auction_status to 1 (assuming active)
+                preparedStatement.setString(9, "yes");  // Set pending_status to 0 (assuming not pending)
+                preparedStatement.setString(10, pDetails);
+                preparedStatement.setString(11, fileNameWithoutSpaces);
 
                 int rowsAffected = preparedStatement.executeUpdate();
                 System.out.println(rowsAffected + " row(s) inserted.");

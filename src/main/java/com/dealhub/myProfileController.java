@@ -7,6 +7,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
@@ -45,6 +46,20 @@ public class myProfileController implements Initializable{
     @FXML
     private Button uploadProductsBtn;
 
+    @FXML
+    private Button addBalanceBtn;
+
+    @FXML
+    private TextField addBalanceTF;
+
+    @FXML
+    private Button changePhoneBtn;
+
+    @FXML
+    private TextField mobileNoTF;
+
+    @FXML
+    private Label muBalanceLabel;
     @FXML
     public void goToEditProfile() throws Exception{
         FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("editProfile.fxml"));

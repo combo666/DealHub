@@ -115,30 +115,17 @@ public class itemAuctionController implements Initializable {
 
         try {
 
-            myBid = Integer.parseInt(text);
-            productPriceI = Integer.parseInt(productPrice.trim());
+            _AUserLoginCheck.setMyBidTrack(Integer.parseInt(text));
+            productPriceI = Integer.parseInt(productPrice);
 
-
-
-
-            System.out.println("myBid: " + myBid);
+            System.out.println("myBid: " + _AUserLoginCheck.getMyBidTrack());
             System.out.println("productPriceI: " + productPriceI);
 
-            if (myBid < productPriceI) {
-                setYourBidLabel.setText("You need to bid higher!");
-                System.out.println("you can not");
-            } else {
-                String updateQuery = "UPDATE `uploadproducts` SET `current_bid` = ? WHERE id = 3";
-                PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
-                preparedStatement.setInt(1, myBid); // Set the value of myBid to the first placeholder
-                int rowsUpdated = preparedStatement.executeUpdate();
-                setYourBidLabel.setText("Bid placed successfully!");
-            }
+
         } catch (NumberFormatException e) {
             setYourBidLabel.setText("Invalid bid input.");
+
             e.printStackTrace();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
         }
 
 
@@ -165,7 +152,7 @@ public class itemAuctionController implements Initializable {
 
         try {
             Statement statement = connection.createStatement();
-            String sqlQuery = "SELECT * FROM `uploadproducts` WHERE id = 3";
+            String sqlQuery = "SELECT * FROM `uploadproducts` WHERE id = 6";
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
 
@@ -195,19 +182,24 @@ public class itemAuctionController implements Initializable {
                 productPrice = pPrice;
                 descriptionLabel.setText(pDetails);
 
-                if(myBid == 0) {
+
+                productPriceI = Integer.parseInt(productPrice);
+                myBid = Integer.parseInt(currPrice);
+                System.out.println(productPriceI);
+
+                if(_AUserLoginCheck.getMyBidTrack() == 0) {
                     System.out.println(" ");
-                }else if (myBid < productPriceI) {
+                }else if (_AUserLoginCheck.getMyBidTrack() < productPriceI || _AUserLoginCheck.getMyBidTrack() < myBid) {
                     setYourBidLabel.setText("You need to bid higher!");
                     System.out.println("you can not");
 
-
                 } else {
-                    String updateQuery = "UPDATE `uploadproducts` SET `current_bid` = ? WHERE id = 3";
+                    String updateQuery = "UPDATE `uploadproducts` SET `current_bid` = ? WHERE id = 6";
                     PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
-                    preparedStatement.setInt(1, myBid); // Set the value of myBid to the first placeholder
+                    preparedStatement.setInt(1, _AUserLoginCheck.getMyBidTrack()); // Set the value of myBid to the first placeholder
                     int rowsUpdated = preparedStatement.executeUpdate();
                     setYourBidLabel.setText("Bid placed successfully!");
+
                 }
 
                 System.out.println(myBid);
@@ -238,8 +230,6 @@ public class itemAuctionController implements Initializable {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-
 
 
         try {
