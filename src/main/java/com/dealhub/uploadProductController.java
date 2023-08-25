@@ -11,15 +11,19 @@ package com.dealhub;
         import java.sql.*;
         import java.time.LocalDateTime;
         import java.time.temporal.ChronoUnit;
+        import java.util.ArrayList;
+        import java.util.List;
         import java.util.Objects;
         import java.util.ResourceBundle;
 
+        import javafx.application.Application;
         import javafx.event.ActionEvent;
         import javafx.fxml.FXML;
         import javafx.fxml.FXMLLoader;
         import javafx.scene.Parent;
         import javafx.scene.Scene;
         import javafx.scene.control.Button;
+        import javafx.scene.control.ComboBox;
         import javafx.scene.control.TextArea;
         import javafx.scene.control.TextField;
         import javafx.stage.FileChooser;
@@ -54,6 +58,8 @@ public class uploadProductController {
 
     @FXML
     private Button profileBtn;
+    @FXML
+    private ComboBox<String> categoryCB;
 
     @FXML
     private Button recentBtn;
@@ -69,6 +75,40 @@ public class uploadProductController {
     private TextField fileDirectory;
     final FileChooser fc = new FileChooser();
     String fileNameWithoutSpaces = null;
+
+    @FXML
+    public void initialize() {
+        List<String> categories = getCategoriesFromDatabase();
+        categoryCB.getItems().addAll(categories);  // Make sure to use the correct variable name here
+    }
+
+    private List<String> getCategoriesFromDatabase() {
+        List<String> categories = new ArrayList<>();
+        String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
+        String username = "root";
+        String password = "";
+
+        try {
+            Connection connection = DriverManager.getConnection(jdbcUrl, username, password);
+            String query = "SELECT roomname FROM `auctionroom`";
+            PreparedStatement statement = connection.prepareStatement(query);
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                String categoryName = resultSet.getString("roomname");
+                categories.add(categoryName);
+            }
+
+            resultSet.close();
+            statement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return categories;
+    }
+
 
     @FXML
     void CancelButtonPress(ActionEvent event) throws IOException {
@@ -135,23 +175,27 @@ public class uploadProductController {
     }
     @FXML
     public void setSubmitBt(ActionEvent event){
-            Connection connection = null;
-            String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
-            String username = "root";
-            String password = "";
 
-            String pName = productName.getText();
-            String pCategory = category.getText();
-            String pCName = companyName.getText();
-            String pCost = productCost.getText();
-            String sTime = endHour.getText();
-            long eTime = Long.parseLong(sTime);
-            String pDetails = productDetails.getText();
+        Connection connection = null;
+        String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
+        String username = "root";
+        String password = "";
 
-            LocalDateTime currentTimestamp = LocalDateTime.now();
-            LocalDateTime endTimestamp = currentTimestamp.plus(eTime, ChronoUnit.MINUTES);
-            Timestamp sqlEndTimestamp = Timestamp.valueOf(endTimestamp);
 
+
+        String pName = productName.getText();
+        String pCategory = categoryCB.getValue();
+        String pCName = companyName.getText();
+        String pCost = productCost.getText();
+        String sTime = endHour.getText();
+        long eTime = Long.parseLong(sTime);
+        String pDetails = productDetails.getText();
+
+        LocalDateTime currentTimestamp = LocalDateTime.now();
+        LocalDateTime endTimestamp = currentTimestamp.plus(eTime, ChronoUnit.MINUTES);
+        Timestamp sqlEndTimestamp = Timestamp.valueOf(endTimestamp);
+
+        if (pCategory != null) {
             try {
                 connection = DriverManager.getConnection(jdbcUrl, username, password);
                 System.out.println("Connected to the database!");
@@ -193,7 +237,7 @@ public class uploadProductController {
                 throw new RuntimeException(e);
             }
 
-        try {
+            try {
                 if (connection != null) {
                     connection.close();
                     System.out.println("Connection closed.");
@@ -202,4 +246,6 @@ public class uploadProductController {
                 e.printStackTrace();
             }
         }
+
+    }
 }

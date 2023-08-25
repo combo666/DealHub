@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,7 +17,7 @@
       </ImageView>
     <Button fx:id="cancelBt" layoutX="685.0" layoutY="928.0" mnemonicParsing="false" onAction="#CancelButtonPress" opacity="0.0" prefHeight="49.0" prefWidth="176.0" text="Button" />
     <Button fx:id="submitBt" layoutX="960.0" layoutY="928.0" mnemonicParsing="false" onAction="#setSubmitBt" opacity="0.0" prefHeight="49.0" prefWidth="176.0" text="Button" />
-    <TextField fx:id="category" layoutX="46.0" layoutY="540.0" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: trasparent;">
+    <TextField fx:id="category" layoutX="62.0" layoutY="821.0" prefHeight="28.0" prefWidth="72.0" style="-fx-background-color: trasparent;">
         <font>
             <Font name="Arial" size="18.0" />
         </font>
@@ -51,6 +52,7 @@
       <Button fx:id="roomBtn" layoutX="1829.0" layoutY="385.0" mnemonicParsing="false" opacity="0.0" prefHeight="49.0" prefWidth="45.0" text="Button" />
       <Button fx:id="recentBtn" layoutX="1829.0" layoutY="491.0" mnemonicParsing="false" opacity="0.0" prefHeight="49.0" prefWidth="45.0" text="Button" />
       <Button fx:id="chooseImageBtn" layoutX="46.0" layoutY="657.0" mnemonicParsing="false" onAction="#setChooseImageBtn" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: transparent;" />
-      <TextField fx:id="fileDirectory" layoutX="46.0" layoutY="706.0" prefHeight="49.0" prefWidth="287.0" style="-fx-background-color: transparent;" />
+      <TextField fx:id="fileDirectory" layoutX="53.0" layoutY="706.0" prefHeight="49.0" prefWidth="249.0" style="-fx-background-color: transparent;" />
+      <ComboBox fx:id="categoryCB" layoutX="53.0" layoutY="543.0" prefHeight="39.0" prefWidth="280.0" style="-fx-background-color: transparent;" />
 </children>
 </AnchorPane>
