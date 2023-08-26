@@ -69,7 +69,7 @@ public class itemAuctionController implements Initializable {
 
     private String productPrice;
     private String productCurrBid;
-    private int myBid,productPriceI;
+    private int myBid,productPriceI,currPriceI;
 
 
 
@@ -152,6 +152,9 @@ public class itemAuctionController implements Initializable {
 
         try {
             Statement statement = connection.createStatement();
+
+            //TODO: dynamic product
+
             String sqlQuery = "SELECT * FROM `uploadproducts` WHERE id = 6";
             ResultSet resultSet = statement.executeQuery(sqlQuery);
 
@@ -184,16 +187,40 @@ public class itemAuctionController implements Initializable {
 
 
                 productPriceI = Integer.parseInt(productPrice);
+                currPriceI  = Integer.parseInt(currPrice);
                 myBid = Integer.parseInt(currPrice);
                 System.out.println(productPriceI);
 
+                String user = "SELECT * FROM `userdata` WHERE id = ?";
+                PreparedStatement userData = connection.prepareStatement(user);
+                userData.setString(1, _AUserLoginCheck.getuLId());
+                ResultSet userDataRes = userData.executeQuery();
+
+                String bidderBalance = userDataResult.getString("user_balance");
+                int intValue = Integer.parseInt(bidderBalance);
+
+
+
                 if(_AUserLoginCheck.getMyBidTrack() == 0) {
                     System.out.println(" ");
-                }else if (_AUserLoginCheck.getMyBidTrack() < productPriceI || _AUserLoginCheck.getMyBidTrack() < myBid) {
+                }else if (_AUserLoginCheck.getMyBidTrack() < productPriceI || _AUserLoginCheck.getMyBidTrack() < myBid ) {
                     setYourBidLabel.setText("You need to bid higher!");
                     System.out.println("you can not");
 
-                } else {
+                }else if(intValue < productPriceI || intValue <currPriceI){
+                    setYourBidLabel.setText("Balance not sufficient!");
+                    System.out.println("no balance");
+                }else {
+                    if (userDataRes.next()) {
+                        int bidderNewBalance = intValue - _AUserLoginCheck.getMyBidTrack();
+                        String updateQuery = "UPDATE `userdata` SET `user_balance` = ? WHERE id = ?";
+                        PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+                        preparedStatement.setInt(1, bidderNewBalance);
+                        preparedStatement.setString(1, _AUserLoginCheck.getuLId());
+                        int rowsUpdated = preparedStatement.executeUpdate();
+                    }
+
+                    //TODO: dynamic product id
                     String updateQuery = "UPDATE `uploadproducts` SET `current_bid` = ? WHERE id = 6";
                     PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
                     preparedStatement.setInt(1, _AUserLoginCheck.getMyBidTrack()); // Set the value of myBid to the first placeholder

@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="eb9769c4-7f53-4cd8-992c-01ccd3e78f94" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/editProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminRoomManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminRoomManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/itemAuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/itemAuctionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/itemAuction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/itemAuction.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

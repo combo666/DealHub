@@ -149,7 +149,7 @@ public class adminRoomManagementController implements Initializable {
                     preparedStatement.close();
 
                     try {
-                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminRoomManagement.fxml"));
                         Parent root = (Parent) fxmlLoader.load();
                         Stage stage = new Stage();
                         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -173,7 +173,7 @@ public class adminRoomManagementController implements Initializable {
             e.printStackTrace();
         }
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminRoomManagement.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

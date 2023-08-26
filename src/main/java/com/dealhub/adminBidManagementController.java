@@ -173,7 +173,7 @@ public class adminBidManagementController implements Initializable {
                     preparedStatement.close();
 
                     try {
-                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("adminBidManagement.fxml"));
                         Parent root = (Parent) fxmlLoader.load();
                         Stage stage = new Stage();
                         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

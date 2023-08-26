@@ -49,8 +49,8 @@
          <font>
             <Font name="System Italic" size="16.0" />
          </font></TextField>
-      <Button fx:id="homeBtn" layoutX="1825.0" layoutY="189.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="profileBtn" layoutX="1825.0" layoutY="298.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="homeBtn" layoutX="1825.0" layoutY="189.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="profileBtn" layoutX="1825.0" layoutY="298.0" mnemonicParsing="false" onAction="#setProfileBtn" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
       <Button fx:id="sectionBtn" layoutX="1825.0" layoutY="407.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
       <Button fx:id="recentBtn" layoutX="1825.0" layoutY="508.0" mnemonicParsing="false" prefHeight="57.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
       <Label fx:id="itemName" layoutX="189.0" layoutY="757.0" prefHeight="32.0" prefWidth="147.0" text="Label">
