@@ -57,7 +57,7 @@ public class editProfileController implements Initializable {
 
 
     @FXML
-    String searchId, firstName, lastName, oPass = "", conPass = "", garbage4 = "";
+    String searchId, firstName, lastName, cNumber = "", conPass = "", garbage4 = "";
 
     public editProfileController() throws Exception {
         boolean found = false;
@@ -75,19 +75,27 @@ public class editProfileController implements Initializable {
 
         try {
             assert connection != null;
-            Statement statement = connection.createStatement();
-            String sqlQuery = "SELECT * FROM userdata";
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
+            String uId = _AUserLoginCheck.getuLId();
+            String sqlQuery = "SELECT * FROM userdata WHERE id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+            preparedStatement.setString(1, uId);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+
 
 
             while (resultSet.next()) {
                 searchId = resultSet.getString("id");
-                if (searchId.equals("011203030")) {
+                if (searchId.equals(_AUserLoginCheck.getuLId())) {
                     found = true;
                     System.out.println(found);
                     firstName = resultSet.getString("first_name");
                     lastName = resultSet.getString("last_name");
                     conPass = resultSet.getString("newPassword");
+                    cNumber = resultSet.getString("contact_number");
+
+
                     System.out.println(firstName);
                     System.out.println(lastName);
                     System.out.println(conPass);
@@ -96,6 +104,7 @@ public class editProfileController implements Initializable {
                         fName.setText(firstName);
                         lName.setText(lastName);
                         uID.setText(searchId);
+                        contactNumber.setText(cNumber);
                     });
                 }
             }
@@ -134,17 +143,15 @@ public class editProfileController implements Initializable {
         if (confPass.getText().equals(conPass)) {
             try {
                 assert connection != null;
-                String sql = "UPDATE `userdata` SET `id`=?,`first_name`=?,`last_name`=?,`contact_number`=?,`profileImage`=?,`newPassword`=?,`confirmPassword`=? WHERE `id`=? ";
+                String sql = "UPDATE `userdata` SET `id`=?,`first_name`=?,`last_name`=?,`newPassword`=?,`confirmPassword`=? WHERE `id`=? ";
 
                 PreparedStatement preparedStatement = connection.prepareStatement(sql);
                 preparedStatement.setString(1, uID.getText());
                 preparedStatement.setString(2, fName.getText());
                 preparedStatement.setString(3, lName.getText());
-                preparedStatement.setString(4, "Empty");
-                preparedStatement.setString(5, "Empty");
-                preparedStatement.setString(6, newPass.getText());
-                preparedStatement.setString(7, newPass.getText());
-                preparedStatement.setString(8, uID.getText());
+                preparedStatement.setString(4, newPass.getText());
+                preparedStatement.setString(5, newPass.getText());
+                preparedStatement.setString(6, uID.getText());
 
                 int rowsAffected = preparedStatement.executeUpdate();
                 System.out.println(rowsAffected + " row(s) inserted.");

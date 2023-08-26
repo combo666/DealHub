@@ -29,7 +29,7 @@
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <TextField fx:id="contactNumber" layoutX="578.0" layoutY="483.0" prefHeight="69.0" prefWidth="869.0" style="-fx-background-color: trasnparent;">
+      <TextField fx:id="contactNumber" editable="false" layoutX="578.0" layoutY="483.0" prefHeight="69.0" prefWidth="869.0" style="-fx-background-color: trasnparent;">
          <font>
             <Font size="18.0" />
          </font></TextField>
