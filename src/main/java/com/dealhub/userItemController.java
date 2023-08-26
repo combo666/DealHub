@@ -13,6 +13,7 @@ import javafx.scene.control.ColorPicker;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.paint.Paint;
@@ -31,11 +32,10 @@ import java.util.ResourceBundle;
 public class userItemController implements Initializable {
 
     @FXML
-    private VBox cartBox;
+    private Button homeBtn;
 
     @FXML
     private ImageView itemImage;
-
     @FXML
     private Label itemName;
     @FXML
@@ -50,55 +50,6 @@ public class userItemController implements Initializable {
     public userItemController() {
 
     }
-
-
-   /* private userItemPost getPost() {
-        return new userItemPost();
-
-    }
-
-    public void setData(userItemPost post) {
-
-        try {
-            Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(post.getItemImage())));
-            itemImage.setImage(image);
-            itemName.setText(post.getItemName());
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-
-
-    }
-
-    @FXML
-    public void item(ActionEvent event) throws IOException {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("item.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-
-        } catch (Exception ignored) {
-        }
-
-    }
-
-    @FXML
-    public void setDetailsBtn(ActionEvent event) throws IOException {
-        try {
-            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("roomPage.fxml"));
-            Parent root = (Parent) fxmlLoader.load();
-            Stage stage = new Stage();
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            stage.setScene(new Scene(root));
-            stage.show();
-
-        } catch (Exception ignored) {
-        }
-    }*/
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -187,7 +138,6 @@ public class userItemController implements Initializable {
                             System.out.println("NO such room");
                         }
 
-
                     } else {
                         System.out.println("Image not found: " + absoluteImagePath);
                     }
@@ -195,7 +145,6 @@ public class userItemController implements Initializable {
                     System.out.println("No image specified.");
                 }
             }
-
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -210,10 +159,17 @@ public class userItemController implements Initializable {
             e.printStackTrace();
         }
 
+    }
+    @FXML
+    public void homeButtonPress() throws IOException {
+        FXMLLoader secondLoader = new FXMLLoader(getClass().getResource("home.fxml"));
+        Parent secondSceneRoot = secondLoader.load();
+        Scene secondScene = new Scene(secondSceneRoot);
 
-        //setData(getPost());
+        Stage primaryStage = (Stage) homeBtn.getScene().getWindow();
+        primaryStage.setScene(secondScene);
+
     }
 
-    //public void getChildren() {}
 
 }

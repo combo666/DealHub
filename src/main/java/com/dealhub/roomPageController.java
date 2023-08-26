@@ -1,5 +1,7 @@
 package com.dealhub;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -9,11 +11,12 @@ import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.ColorPicker;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
@@ -37,6 +40,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.ResultSet;
+import java.util.stream.Collectors;
 
 
 public class roomPageController implements Initializable {
@@ -53,46 +57,148 @@ public class roomPageController implements Initializable {
     private Button roomsBtn;
     List<itemPost> post;
     Connection connection = null;
+    String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
+    String username = "root";
+    String password = "";
     @FXML
     private GridPane itemContainer;
 
     @FXML
     TilePane tilePane = new TilePane();
+    @FXML
+    TextField searchBar = new TextField();
+
+    @FXML
+    public ListView<String> suggestionsListView = new ListView<>();
+
+    private ObservableList<String> suggestionsList = FXCollections.observableArrayList();
+
 
     public static String deliveredRoomName;
 
+    @FXML
+    public void setSearchBar(KeyEvent event) {
+        suggestionsListView.setItems(suggestionsList);
+
+        if (event.getCode() == KeyCode.ENTER) {
+            String searchTerm = searchBar.getText().trim();
+            deliveredRoomName=searchTerm;
+
+            try {
+                FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("userItem.fxml"));
+                Parent root = (Parent) fxmlLoader.load();
+                Stage stage = new Stage();
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } catch (Exception ignored) {
+            }
+
+        }
+
+        else{
+            String searchTerm = searchBar.getText().trim();
+
+
+            if (searchTerm.isEmpty()) {
+                suggestionsList.clear();
+                suggestionsListView.setVisible(false);
+            } else {
+                List<String> matchingSuggestions = fetchSuggestionsFromDatabase(searchTerm);
+
+                if (matchingSuggestions.isEmpty()) {
+                    suggestionsListView.setVisible(false);
+                } else {
+                    suggestionsList.setAll(matchingSuggestions);
+                    suggestionsListView.setVisible(true);
+                }
+            }
+        }
+    }
+    @FXML
+    private void handleListViewItemClick(MouseEvent event) {
+        String selectedSuggestion = suggestionsListView.getSelectionModel().getSelectedItem();
+        if (selectedSuggestion != null) {
+            searchBar.setText(selectedSuggestion);
+            suggestionsListView.setVisible(false); // Hide the ListView after selection
+        }
+    }
+
+    private List<String> fetchSuggestionsFromDatabase(String query) {
+
+        try {
+            connection = DriverManager.getConnection(jdbcUrl, username, password);
+            System.out.println("Connected to the database!");
+        } catch (
+                SQLException e) {
+            e.printStackTrace();
+        }
+
+        List<String> suggestions = new ArrayList<>();
+        List<String> filteredItems= new ArrayList<>();
+
+        try {
+            Statement statement = connection.createStatement();
+            String sqlQuery = "SELECT * FROM auctionroom";
+            ResultSet resultSet = statement.executeQuery(sqlQuery);
+            System.out.println("here");
+
+            while (resultSet.next()) {
+                String roomNameToShow = resultSet.getString("roomname");
+                suggestions.add(roomNameToShow);
+            }
+
+            filteredItems = suggestions.stream()
+                    .filter(item -> item.toLowerCase().contains(query.toLowerCase()))
+                    .collect(Collectors.toList());
+
+        } catch (Exception ignored) {
+        }
+        try {
+            if (connection != null) {
+                connection.close();
+                System.out.println("Connection closed.");
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return filteredItems;
+    }
+
 
     @FXML
-    public void setHomeBtn(ActionEvent event)throws IOException {
+    public void setHomeBtn(ActionEvent event) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("home.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
 
-        }catch (Exception ignored){}
+        } catch (Exception ignored) {
+        }
     }
+
     @FXML
-    public void setProfileBtn(ActionEvent event)throws IOException {
+    public void setProfileBtn(ActionEvent event) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("myProfile.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.show();
 
-        }catch (Exception ignored){}
+        } catch (Exception ignored) {
+        }
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        
-        String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
-        String username = "root";
-        String password = "";
+
+
 
         try {
             connection = DriverManager.getConnection(jdbcUrl, username, password);
@@ -103,7 +209,7 @@ public class roomPageController implements Initializable {
         }
 
 
-       try {
+        try {
             Statement statement = connection.createStatement();
             String sqlQuery = "SELECT * FROM auctionroom";
             ResultSet resultSet = statement.executeQuery(sqlQuery);
@@ -112,11 +218,11 @@ public class roomPageController implements Initializable {
             while (resultSet.next()) {
 
                 AnchorPane anchorPane = new AnchorPane();
-                anchorPane.setMaxSize(250,333);
+                anchorPane.setMaxSize(250, 333);
 
 
                 String roomImg = resultSet.getString("roomimage");
-                String roomName= resultSet.getString("roomname");
+                String roomName = resultSet.getString("roomname");
 
                 Label nameLabel = new Label(roomName);
                 nameLabel.setPrefWidth(250);
@@ -124,16 +230,16 @@ public class roomPageController implements Initializable {
                 nameLabel.setAlignment(Pos.BASELINE_CENTER);
                 nameLabel.setLayoutX(0);
                 nameLabel.setLayoutY(294);
-                nameLabel.setFont(Font.font("Arial", FontWeight.BOLD,15));
+                nameLabel.setFont(Font.font("Arial", FontWeight.BOLD, 15));
                 nameLabel.setUnderline(true);
                 //nameLabel.setTextAlignment(TextAlignment.CENTER);
 
                 Button insideRoomBtn = new Button();
-                insideRoomBtn.setPrefSize(250,333);
+                insideRoomBtn.setPrefSize(250, 333);
                 insideRoomBtn.setLayoutX(0);
                 insideRoomBtn.setOpacity(0);
-                insideRoomBtn.setOnAction(e->{
-                    deliveredRoomName=roomName;
+                insideRoomBtn.setOnAction(e -> {
+                    deliveredRoomName = roomName;
                     try {
                         FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("userItem.fxml"));
                         Parent root = (Parent) fxmlLoader.load();
@@ -157,7 +263,7 @@ public class roomPageController implements Initializable {
                         roomImage.setFitHeight(281);
                         roomImage.setLayoutX(0);
 
-                        anchorPane.getChildren().addAll(roomImage,nameLabel,insideRoomBtn);
+                        anchorPane.getChildren().addAll(roomImage, nameLabel, insideRoomBtn);
 
                         tilePane.getChildren().add(anchorPane);
                         System.out.println("found");
@@ -170,7 +276,8 @@ public class roomPageController implements Initializable {
                 }
 
             }
-        }catch (Exception e){}
+        } catch (Exception e) {
+        }
 
 
         try {

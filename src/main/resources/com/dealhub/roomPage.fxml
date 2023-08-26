@@ -2,6 +2,8 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -29,5 +31,7 @@
       <Line endX="-106.5" endY="-20.0" layoutX="410.0" layoutY="181.0" startX="-116.0" startY="-8.0" strokeWidth="3.0" />
       <Line endX="-97.5" endY="-1.0" layoutX="401.0" layoutY="162.0" startX="-107.0" startY="-13.0" strokeWidth="3.0" />
       <TilePane fx:id="tilePane" hgap="50.0" layoutX="97.0" layoutY="238.0" prefHeight="831.0" prefWidth="1657.0" vgap="40.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="166.0" AnchorPane.topAnchor="238.0" />
+      <TextField fx:id="searchBar" layoutX="787.0" layoutY="49.0" onKeyReleased="#setSearchBar" prefHeight="34.0" prefWidth="543.0" promptText="Search Keyword" style="-fx-background-color: TRANSPARENT;" />
+      <ListView fx:id="suggestionsListView" depthTest="ENABLE" layoutX="787.0" layoutY="88.0" onMouseClicked="#handleListViewItemClick" opacity="0.71" prefHeight="70.0" prefWidth="543.0" visible="false" />
    </children>
 </AnchorPane>
