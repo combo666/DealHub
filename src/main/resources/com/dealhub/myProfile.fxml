@@ -26,8 +26,8 @@
       <Button layoutX="1826.0" layoutY="500.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="50.0" style="-fx-background-color: transparent;" />
       <TextField fx:id="addBalanceTF" layoutX="644.0" layoutY="291.0" prefHeight="36.0" prefWidth="286.0" style="-fx-background-color: transparent;" />
       <TextField fx:id="mobileNoTF" layoutX="644.0" layoutY="361.0" prefHeight="36.0" prefWidth="286.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="changePhoneBtn" layoutX="993.0" layoutY="361.0" mnemonicParsing="false" onAction="#goToEditProfile" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="addBalanceBtn" layoutX="993.0" layoutY="291.0" mnemonicParsing="false" onAction="#goToEditProfile" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="changePhoneBtn" layoutX="993.0" layoutY="361.0" mnemonicParsing="false" onAction="#setChangePhoneBtn" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="addBalanceBtn" layoutX="993.0" layoutY="291.0" mnemonicParsing="false" onAction="#setAddBalanceBtn" prefHeight="36.0" prefWidth="150.0" style="-fx-background-color: transparent;" />
       <Label fx:id="muBalanceLabel" layoutX="644.0" layoutY="198.0" prefHeight="36.0" prefWidth="174.0" text="Label">
          <font>
             <Font name="System Bold" size="18.0" />
