@@ -44,6 +44,9 @@ public class userItemController implements Initializable {
     @FXML
     Label noSuchItm;
 
+    @FXML
+    private Button profileBtn;
+
     public static String deliveredItemId;
     @FXML
     TilePane tilePane = new TilePane();
@@ -51,6 +54,35 @@ public class userItemController implements Initializable {
     String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
     String username = "root";
     String password = "";
+
+
+    @FXML
+    public void setHomeBtn(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("home.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (Exception ignored) {
+        }
+    }
+    @FXML
+    public void setProfileBtn(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("myProfile.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (Exception ignored) {
+        }
+    }
+
 
     public userItemController() {
 
