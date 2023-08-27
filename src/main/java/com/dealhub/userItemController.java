@@ -106,17 +106,32 @@ public class userItemController implements Initializable {
                 placeBidBtn.setAlignment(Pos.BASELINE_CENTER);
 
                 placeBidBtn.setOnAction(e->{
-                    try {
-                        deliveredItemId=id;
-                        FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("itemAuction.fxml"));
-                        Parent root = (Parent) fxmlLoader.load();
-                        Stage stage = new Stage();
-                        stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
-                        stage.setScene(new Scene(root));
-                        stage.show();
 
-                    } catch (Exception ignored) {
-                    }
+                        if(_AUserLoginCheck.getuLId() == null){
+                            try {
+                            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+                            Parent root = (Parent) fxmlLoader.load();
+                            Stage stage = new Stage();
+                            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                            stage.setScene(new Scene(root));
+                            stage.show();
+                        } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
+                        }else {
+                            try{
+                            deliveredItemId = id;
+                            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("itemAuction.fxml"));
+                            Parent root = (Parent) fxmlLoader.load();
+                            Stage stage = new Stage();
+                            stage = (Stage) ((Node) e.getSource()).getScene().getWindow();
+                            stage.setScene(new Scene(root));
+                            stage.show();
+                        } catch (IOException ex) {
+                                throw new RuntimeException(ex);
+                            }
+                        }
+
                 });
 
 
