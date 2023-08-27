@@ -130,8 +130,7 @@ public class roomPageController implements Initializable {
         try {
             connection = DriverManager.getConnection(jdbcUrl, username, password);
             System.out.println("Connected to the database!");
-        } catch (
-                SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
 
@@ -240,6 +239,7 @@ public class roomPageController implements Initializable {
                 insideRoomBtn.setOpacity(0);
                 insideRoomBtn.setOnAction(e -> {
                     deliveredRoomName = roomName;
+                    System.out.println("delivered: "+deliveredRoomName);
                     try {
                         FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("userItem.fxml"));
                         Parent root = (Parent) fxmlLoader.load();
@@ -266,7 +266,7 @@ public class roomPageController implements Initializable {
                         anchorPane.getChildren().addAll(roomImage, nameLabel, insideRoomBtn);
 
                         tilePane.getChildren().add(anchorPane);
-                        System.out.println("found");
+
 
                     } else {
                         System.out.println("Image not found: " + absoluteImagePath);

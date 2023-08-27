@@ -151,24 +151,27 @@ public class itemAuctionController implements Initializable {
 
 
         try {
-            Statement statement = connection.createStatement();
-
             //TODO: dynamic product
 
-            String sqlQuery = "SELECT * FROM `uploadproducts` WHERE id = 6";
-            ResultSet resultSet = statement.executeQuery(sqlQuery);
+            String iId = "8";
+            Statement statement = connection.createStatement();
+            String sqlQuery = "SELECT * FROM uploadproducts where id = ?";
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
+            preparedStatement.setString(1, iId);
+            ResultSet resultSet = preparedStatement.executeQuery();
 
 
             if (resultSet.next()) {
                 String itemId = resultSet.getString("id");
-                String pName = resultSet.getString("product_name");
-                String endOn = resultSet.getString("end_time");
                 String seller = resultSet.getString("uploader_id");
-                String sellerCompany = resultSet.getString("company_name");
-                String itemImg = resultSet.getString("product_image");
-                String currPrice = resultSet.getString("current_bid");
+                String pName = resultSet.getString("product_name");
+                String pCategory = resultSet.getString("category");
                 String pPrice = resultSet.getString("product_cost");
+                String currPrice = resultSet.getString("current_bid");
+                String sellerCompany = resultSet.getString("company_name");
+                String endOn = resultSet.getString("end_time");
                 String pDetails = resultSet.getString("product_details");
+                String itemImg = resultSet.getString("product_image");
 
                 String userDataSql = "SELECT * FROM `userdata` WHERE id = ?";
                 PreparedStatement userDataStatement = connection.prepareStatement(userDataSql);
@@ -185,15 +188,29 @@ public class itemAuctionController implements Initializable {
                 productPrice = pPrice;
                 descriptionLabel.setText(pDetails);
 
+                if (itemImg != null) {
+                    String absoluteImagePath = "_" + itemImg;
+                    System.out.println(absoluteImagePath);
+                    InputStream imageStream = getClass().getResourceAsStream(absoluteImagePath);
+
+                    if (imageStream != null) {
+                        Image image = new Image(imageStream);
+                        itemImage.setImage(image);
+
+                    } else {
+                        System.out.println("Image not found: " + absoluteImagePath);
+                    }
+                } else {
+                    System.out.println("No image specified.");
+                }
+
 
                 productPriceI = Integer.parseInt(productPrice);
-                currPriceI  = Integer.parseInt(currPrice);
                 myBid = Integer.parseInt(currPrice);
-                System.out.println(productPriceI);
 
                 String user = "SELECT * FROM `userdata` WHERE id = ?";
                 PreparedStatement userData = connection.prepareStatement(user);
-                userData.setString(1, _AUserLoginCheck.getuLId());
+                userData.setString(1,_AUserLoginCheck.getuLId());
                 ResultSet userDataRes = userData.executeQuery();
 
                 String bidderBalance = userDataResult.getString("user_balance");
@@ -201,32 +218,33 @@ public class itemAuctionController implements Initializable {
 
 
 
-                if(_AUserLoginCheck.getMyBidTrack() == 0) {
+                if (_AUserLoginCheck.getMyBidTrack() == 0) {
                     System.out.println(" ");
-                }else if (_AUserLoginCheck.getMyBidTrack() < productPriceI || _AUserLoginCheck.getMyBidTrack() < myBid ) {
+                } else if (_AUserLoginCheck.getMyBidTrack() < productPriceI || _AUserLoginCheck.getMyBidTrack() < myBid) {
                     setYourBidLabel.setText("You need to bid higher!");
-                    System.out.println("you can not");
+                    System.out.println("you cannot");
 
-                }else if(intValue < productPriceI || intValue <currPriceI){
+                } else if (intValue < productPriceI || intValue < currPriceI) {
                     setYourBidLabel.setText("Balance not sufficient!");
                     System.out.println("no balance");
                 }else {
                     if (userDataRes.next()) {
                         int bidderNewBalance = intValue - _AUserLoginCheck.getMyBidTrack();
-                        String updateQuery = "UPDATE `userdata` SET `user_balance` = ? WHERE id = ?";
-                        PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
-                        preparedStatement.setInt(1, bidderNewBalance);
-                        preparedStatement.setString(1, _AUserLoginCheck.getuLId());
-                        int rowsUpdated = preparedStatement.executeUpdate();
+                        String updateBalanceQuery = "UPDATE `userdata` SET `user_balance` = ? WHERE id = ?";
+                        PreparedStatement updateBalanceStatement = connection.prepareStatement(updateBalanceQuery);
+                        updateBalanceStatement.setInt(1, bidderNewBalance);
+                        updateBalanceStatement.setString(2, _AUserLoginCheck.getuLId());
+                        int rowsUpdatedBalance = updateBalanceStatement.executeUpdate();
+
                     }
 
                     //TODO: dynamic product id
-                    String updateQuery = "UPDATE `uploadproducts` SET `current_bid` = ? WHERE id = 6";
-                    PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
-                    preparedStatement.setInt(1, _AUserLoginCheck.getMyBidTrack()); // Set the value of myBid to the first placeholder
-                    int rowsUpdated = preparedStatement.executeUpdate();
+                    String updateBidQuery = "UPDATE `uploadproducts` SET `current_bid` = ? WHERE id = ?";
+                    PreparedStatement updateBidStatement = connection.prepareStatement(updateBidQuery);
+                    updateBidStatement.setInt(1, _AUserLoginCheck.getMyBidTrack()); // Set the value of myBid to the first placeholder
+                    updateBidStatement.setInt(2, Integer.parseInt(itemId)); // Set the item ID as the second placeholder
+                    int rowsUpdatedBid = updateBidStatement.executeUpdate();
                     setYourBidLabel.setText("Bid placed successfully!");
-
                 }
 
                 System.out.println(myBid);
@@ -239,22 +257,15 @@ public class itemAuctionController implements Initializable {
 
                 }
 
-                if (itemImg != null) {
-                    String absoluteImagePath = "_" + itemImg;
-                    InputStream imageStream = getClass().getResourceAsStream(absoluteImagePath);
-                    if (imageStream != null) {
-                        Image image = new Image(imageStream);
-                        itemImage.setImage(image);
-                    } else {
-                        System.out.println("Image not found: " + absoluteImagePath);
-                    }
-                } else {
-                    System.out.println("No image specified.");
-                }
-            } else {
+
+
+
+
+            }else {
                 System.out.println("No results found.");
             }
-        } catch (SQLException e) {
+        }
+        catch (SQLException e) {
             e.printStackTrace();
         }
 

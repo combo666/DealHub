@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb9769c4-7f53-4cd8-992c-01ccd3e78f94" name="Changes" comment="">
+    <list default="true" id="fc0b0e9b-6943-4992-bca0-d83c3e507044" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminAuctionsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminBidManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminRoomManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminRoomManagementController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/adminUserManagementController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/itemAuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/itemAuctionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/itemAuction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/itemAuction.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/roomPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/roomPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/_images.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/_images.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/_photo-1525966222134-fcfa99b8ae77.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/_photo-1525966222134-fcfa99b8ae77.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/roomPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/roomPage.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,21 +23,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="ProjectId" id="2UUkbqS8PDfFTw6xjEZzUY3ioYZ" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;
-  }
-}</component>
   <component name="RunManager" selected="Application.homeApplication">
     <configuration name="homeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.homeApplication" />
@@ -50,8 +40,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="uploadProductApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.uploadProductApplication" />
+    <configuration name="itemAuctionApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.itemAuctionApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -63,8 +53,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="userItemApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.dealhub.userItemApplication" />
+    <configuration name="roomPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.roomPageApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -79,20 +69,20 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.homeApplication" />
-        <item itemvalue="Application.uploadProductApplication" />
-        <item itemvalue="Application.userItemApplication" />
+        <item itemvalue="Application.roomPageApplication" />
+        <item itemvalue="Application.itemAuctionApplication" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="eb9769c4-7f53-4cd8-992c-01ccd3e78f94" name="Changes" comment="" />
-      <created>1693001628257</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1693001628257</updated>
-    </task>
     <servers />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/DealHub$uploadProductApplication.ic" NAME="uploadProductApplication Coverage Results" MODIFIED="1691852137936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dealhub.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/DealHub$itemApplication.ic" NAME="itemApplication Coverage Results" MODIFIED="1692501304204" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>com.dealhub.*</FILTER>
+    </SUITE>
   </component>
 </project>

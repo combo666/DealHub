@@ -42,6 +42,8 @@ public class userItemController implements Initializable {
     @FXML
     private Button detailsBtn;
     @FXML
+    Label noSuchItm;
+    @FXML
     TilePane tilePane = new TilePane();
     Connection connection = null;
     String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
@@ -132,12 +134,12 @@ public class userItemController implements Initializable {
                             anchorPane.getChildren().add(bidPrice);
                             tilePane.getChildren().add(anchorPane);
                         }
-                        else{
+                        /*else{
                             Label noItem = new Label("No Items Available");
                             noItem.setFont(Font.font("Arial",20));
                             tilePane.getChildren().add(noItem);
                             System.out.println("NO such room");
-                        }
+                        }*/
 
                     } else {
                         System.out.println("Image not found: " + absoluteImagePath);
@@ -145,6 +147,10 @@ public class userItemController implements Initializable {
                 } else {
                     System.out.println("No image specified.");
                 }
+                /*if(tilePane.getChildren().isEmpty()){
+                    noSuchItm.setText("Nothing to show");
+
+                }*/
             }
 
         } catch (SQLException e) {
