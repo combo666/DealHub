@@ -230,6 +230,7 @@ public class adminAuctionsController implements Initializable {
                 String name = resultSet.getString("product_name");
                 String remTime = resultSet.getString("end_time");
                 String state = resultSet.getString("auction_status");
+                String bid = resultSet.getString("current_bid");
 
                 System.out.println("found");
 
@@ -246,7 +247,7 @@ public class adminAuctionsController implements Initializable {
                 idLebel.setLayoutX(268);
                 idLebel.setFont(Font.font("Arial",15));
 
-                Label bidsLebel = new Label("empty");
+                Label bidsLebel = new Label(bid);
                 bidsLebel.setMaxSize(193, 25);
                 bidsLebel.setLayoutX(497);
                 bidsLebel.setFont(Font.font("Arial",15));
