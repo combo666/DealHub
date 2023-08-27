@@ -43,6 +43,8 @@ public class userItemController implements Initializable {
     private Button detailsBtn;
     @FXML
     Label noSuchItm;
+
+    public static String deliveredItemId;
     @FXML
     TilePane tilePane = new TilePane();
     Connection connection = null;
@@ -79,6 +81,7 @@ public class userItemController implements Initializable {
                 String itemName = resultSet.getString("product_name");
                 String price = resultSet.getString("product_cost");
                 String room= resultSet.getString("category");
+                String id=resultSet.getString("id");
 
                 Label name = new Label(itemName);
                 name.setPrefSize(250, 55);
@@ -104,6 +107,7 @@ public class userItemController implements Initializable {
 
                 placeBidBtn.setOnAction(e->{
                     try {
+                        deliveredItemId=id;
                         FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("itemAuction.fxml"));
                         Parent root = (Parent) fxmlLoader.load();
                         Stage stage = new Stage();

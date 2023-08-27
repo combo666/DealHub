@@ -33,9 +33,9 @@
                   <ScrollPane prefHeight="486.0" prefWidth="1451.0" style="-fx-background-color: transparent;" HBox.hgrow="ALWAYS">
                      <content>
                         <GridPane fx:id="roomContainer" hgap="30.0">
-                          <rowConstraints>
-                            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                          </rowConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <padding>
                               <Insets right="40.0" />
                            </padding>

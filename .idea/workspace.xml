@@ -5,15 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fc0b0e9b-6943-4992-bca0-d83c3e507044" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/itemAuctionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/itemAuctionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/roomPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/roomPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/itemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/itemController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/_images.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/_images.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/_photo-1525966222134-fcfa99b8ae77.jfif" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/_photo-1525966222134-fcfa99b8ae77.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/item.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/roomPage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/roomPage.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/itemAuction.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/itemAuction.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

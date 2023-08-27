@@ -27,7 +27,7 @@ public class itemAuctionController implements Initializable {
     private Label MinPriceLabel;
 
     @FXML
-    private TextField descriptionLabel;
+    private Label descriptionLabel;
 
     @FXML
     private Label endsOnLabel;
@@ -153,7 +153,7 @@ public class itemAuctionController implements Initializable {
         try {
             //TODO: dynamic product
 
-            String iId = "8";
+            String iId = userItemController.deliveredItemId;
             Statement statement = connection.createStatement();
             String sqlQuery = "SELECT * FROM uploadproducts where id = ?";
             PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);

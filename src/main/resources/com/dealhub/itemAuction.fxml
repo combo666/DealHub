@@ -8,14 +8,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.itemAuctionController">
+<AnchorPane prefHeight="1080.0" prefWidth="1920.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealhub.itemAuctionController">
    <children>
       <ImageView fitHeight="1080.0" fitWidth="1920.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@itemAuction.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="itemImage" fitHeight="448.0" fitWidth="449.0" layoutX="55.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="itemImage" fitHeight="448.0" fitWidth="450.0" layoutX="55.0" layoutY="170.0" pickOnBounds="true" preserveRatio="true" />
       <TextField fx:id="setYourBidTF" layoutX="960.0" layoutY="407.0" prefHeight="32.0" prefWidth="147.0" style="-fx-background-color: transparent;">
          <font>
             <Font name="System Bold Italic" size="16.0" />
@@ -45,10 +45,6 @@
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Label>
-      <TextField fx:id="descriptionLabel" layoutX="645.0" layoutY="722.0" prefHeight="101.0" prefWidth="1026.0" style="-fx-background-color: transparent;">
-         <font>
-            <Font name="System Italic" size="16.0" />
-         </font></TextField>
       <Button fx:id="homeBtn" layoutX="1825.0" layoutY="189.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
       <Button fx:id="profileBtn" layoutX="1825.0" layoutY="298.0" mnemonicParsing="false" onAction="#setProfileBtn" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
       <Button fx:id="sectionBtn" layoutX="1825.0" layoutY="407.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="56.0" style="-fx-background-color: transparent;" />
@@ -63,5 +59,6 @@
             <Font name="System Italic" size="16.0" />
          </font>
       </Label>
+      <Label fx:id="descriptionLabel" layoutX="622.0" layoutY="735.0" prefHeight="101.0" prefWidth="1026.0" style="-fx-background-color: TRANSPARENT;" wrapText="true" />
    </children>
 </AnchorPane>
