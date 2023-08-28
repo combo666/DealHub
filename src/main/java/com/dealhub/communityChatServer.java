@@ -8,7 +8,7 @@ public class communityChatServer {
 
     private static final int PORT = 8080;
     private static Map<String, PrintWriter> clientWriters = new HashMap<>();
-    private static List<String> chatHistory = new ArrayList<>();
+    public static List<String> chatHistory = new ArrayList<>();
 
     public static void main(String[] args) {
         try {

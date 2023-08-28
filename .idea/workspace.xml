@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3f327ee5-3b81-40b6-994b-1393e573db12" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/communityChatServer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/communityServerApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/communityServerController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/communityServer.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/homeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server_log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/server_log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/communityChatServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/communityChatServer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/communityServerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/communityServerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/communityServer.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/communityServer.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/dealhub/home.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -29,9 +28,35 @@
     "git-widget-placeholder": "main"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.homeApplication">
+  <component name="RunManager" selected="Application.communityServerApplication">
     <configuration name="adminBidManagementApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.adminBidManagementApplication" />
+      <module name="DealHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dealhub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="communityChatServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.communityChatServer" />
+      <module name="DealHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dealhub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="communityServerApplication" type="Application" factoryName="Application" singleton="false" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.communityServerApplication" />
       <module name="DealHub" />
       <extension name="coverage">
         <pattern>
@@ -71,12 +96,16 @@
     </configuration>
     <list>
       <item itemvalue="Application.adminBidManagementApplication" />
+      <item itemvalue="Application.communityChatServer" />
       <item itemvalue="Application.uploadProductApplication" />
+      <item itemvalue="Application.communityServerApplication" />
       <item itemvalue="Application.homeApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.communityServerApplication" />
         <item itemvalue="Application.homeApplication" />
+        <item itemvalue="Application.communityChatServer" />
         <item itemvalue="Application.adminBidManagementApplication" />
         <item itemvalue="Application.uploadProductApplication" />
       </list>

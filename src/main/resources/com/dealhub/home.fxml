@@ -50,7 +50,7 @@
             <AnchorPane prefHeight="610.0" prefWidth="143.0" BorderPane.alignment="CENTER">
                <children>
                   <Button fx:id="editProfileBtn" layoutX="70.0" layoutY="292.0" mnemonicParsing="false" onAction="#setEditProfileBtn" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: TRANSPARENT;" />
-                  <Button layoutX="70.0" layoutY="405.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: TRANSPARENT;" />
+                  <Button fx:id="communityServerBtn" layoutX="70.0" layoutY="405.0" mnemonicParsing="false" onAction="#setCommunityServerBtn" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: TRANSPARENT;" />
                   <Button layoutX="70.0" layoutY="511.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="52.0" style="-fx-background-color: TRANSPARENT;" />
                   <Button fx:id="homeLoginBtn" layoutX="-67.0" layoutY="38.0" mnemonicParsing="false" onAction="#setHomeLoginBtn" prefHeight="42.0" prefWidth="181.0" style="-fx-background-color: TRANSPARENT;" />
                   <Label fx:id="logedinUserLabel" disable="true" layoutX="-11.0" layoutY="37.0" prefHeight="35.0" prefWidth="163.0" text="Login/Sign up" underline="true">
