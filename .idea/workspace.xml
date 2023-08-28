@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ccdec1c7-1d07-460c-8000-ebb4fe17bf1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/pendingPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/pendingPostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/roomPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/roomPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,7 +35,7 @@
     &quot;last_opened_file_path&quot;: &quot;E:/AOOP/DealHub&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.homeApplication">
+  <component name="RunManager" selected="Application.roomPageApplication">
     <configuration name="homeApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.dealhub.homeApplication" />
       <module name="DealHub" />
@@ -61,8 +62,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="roomPageApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.dealhub.roomPageApplication" />
+      <module name="DealHub" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.dealhub.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.roomPageApplication" />
         <item itemvalue="Application.homeApplication" />
         <item itemvalue="Application.pendingPostApplication" />
       </list>

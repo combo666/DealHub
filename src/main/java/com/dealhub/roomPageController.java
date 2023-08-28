@@ -154,6 +154,7 @@ public class roomPageController implements Initializable {
 
         } catch (Exception ignored) {
         }
+
         try {
             if (connection != null) {
                 connection.close();
