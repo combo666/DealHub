@@ -39,6 +39,8 @@ public class homeController implements  Initializable{
     private Button homeLoginBtn;
     @FXML
     private Label logedinUserLabel;
+    @FXML
+    private Button communityServerBtn;
     Image photo1 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithoutLogin.png")));
     Image photo2 = new Image(Objects.requireNonNull(getClass().getResourceAsStream("homePageWithoutLogin.png")));
     Connection connection = null;
@@ -51,6 +53,20 @@ public class homeController implements  Initializable{
     public void setHomeLoginBtn(ActionEvent event) throws IOException {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("login.fxml"));
+            Parent root = (Parent) fxmlLoader.load();
+            Stage stage = new Stage();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.show();
+
+        } catch (Exception ignored) {
+        }
+
+    }
+    @FXML
+    public void setCommunityServerBtn(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("communityServer.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
