@@ -44,7 +44,7 @@ public class itemController implements Initializable {
         try{
             Image image = new Image(Objects.requireNonNull(getClass().getResourceAsStream(post.getItemImage())));
             itemImage.setImage(image);
-            itemName.setText(post.getItemName());
+            detailsBtn.setText(post.getItemName());
         }catch (Exception e){
             System.out.println(e);
         }
@@ -68,6 +68,7 @@ public class itemController implements Initializable {
     @FXML
     public void setDetailsBtn(ActionEvent event)throws IOException{
         try {
+
             FXMLLoader fxmlLoader = new FXMLLoader(loginApplication.class.getResource("roomPage.fxml"));
             Parent root = (Parent) fxmlLoader.load();
             Stage stage = new Stage();

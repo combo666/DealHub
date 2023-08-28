@@ -18,10 +18,10 @@
             <Image url="@roomBackground.png" />
          </image>
       </ImageView>
-      <Button fx:id="homeBtn" layoutX="1824.0" layoutY="181.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="58.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="profileBtn" layoutX="1823.0" layoutY="287.0" mnemonicParsing="false" onAction="#setProfileBtn" prefHeight="58.0" prefWidth="52.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="roomsBtn" layoutX="1827.0" layoutY="393.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
-      <Button fx:id="recentBtn" layoutX="1820.0" layoutY="500.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="52.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="homeBtn" layoutX="1837.0" layoutY="175.0" mnemonicParsing="false" onAction="#setHomeBtn" prefHeight="58.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="profileBtn" layoutX="1837.0" layoutY="287.0" mnemonicParsing="false" onAction="#setProfileBtn" prefHeight="58.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="roomsBtn" layoutX="1837.0" layoutY="395.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
+      <Button fx:id="recentBtn" layoutX="1837.0" layoutY="499.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="44.0" style="-fx-background-color: transparent;" />
       <Label layoutX="97.0" layoutY="148.0" text="All Categories">
          <font>
             <Font name="Arial Bold" size="24.0" />
@@ -30,8 +30,8 @@
       <Line endX="40.0" layoutX="262.0" layoutY="161.0" startX="6.0" strokeWidth="3.0" />
       <Line endX="-106.5" endY="-20.0" layoutX="410.0" layoutY="181.0" startX="-116.0" startY="-8.0" strokeWidth="3.0" />
       <Line endX="-97.5" endY="-1.0" layoutX="401.0" layoutY="162.0" startX="-107.0" startY="-13.0" strokeWidth="3.0" />
-      <TilePane fx:id="tilePane" hgap="50.0" layoutX="97.0" layoutY="238.0" prefHeight="831.0" prefWidth="1657.0" vgap="40.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="97.0" AnchorPane.rightAnchor="166.0" AnchorPane.topAnchor="238.0" />
-      <TextField fx:id="searchBar" layoutX="787.0" layoutY="49.0" onKeyReleased="#setSearchBar" prefHeight="34.0" prefWidth="543.0" promptText="Search Keyword" style="-fx-background-color: TRANSPARENT;" />
+      <TilePane fx:id="tilePane" hgap="50.0" layoutX="125.0" layoutY="238.0" prefHeight="831.0" prefWidth="1629.0" vgap="40.0" AnchorPane.bottomAnchor="11.0" AnchorPane.leftAnchor="125.0" AnchorPane.rightAnchor="166.0" AnchorPane.topAnchor="238.0" />
+      <TextField fx:id="searchBar" layoutX="787.0" layoutY="51.0" onKeyReleased="#setSearchBar" prefHeight="34.0" prefWidth="543.0" promptText="Search Keyword" style="-fx-background-color: TRANSPARENT;" />
       <ListView fx:id="suggestionsListView" depthTest="ENABLE" layoutX="787.0" layoutY="88.0" onMouseClicked="#handleListViewItemClick" opacity="0.71" prefHeight="70.0" prefWidth="543.0" visible="false" />
       <Label fx:id="noSuchItm" layoutX="426.0" layoutY="136.0" prefHeight="34.0" prefWidth="311.0" textFill="#e40707">
          <font>
