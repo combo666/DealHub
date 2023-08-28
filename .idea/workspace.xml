@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ccdec1c7-1d07-460c-8000-ebb4fe17bf1d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/userItemController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/dealhub/pendingPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/dealhub/pendingPostController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
