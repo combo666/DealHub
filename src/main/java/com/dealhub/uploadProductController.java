@@ -181,8 +181,6 @@ public class uploadProductController {
         String username = "root";
         String password = "";
 
-
-
         String pName = productName.getText();
         String pCategory = categoryCB.getValue();
         String pCName = companyName.getText();
@@ -190,6 +188,9 @@ public class uploadProductController {
         String sTime = endHour.getText();
         long eTime = Long.parseLong(sTime);
         String pDetails = productDetails.getText();
+
+        String sDuration = endHour.getText();
+        long auctionDuration = Long.parseLong(sDuration);
 
         LocalDateTime currentTimestamp = LocalDateTime.now();
         LocalDateTime endTimestamp = currentTimestamp.plus(eTime, ChronoUnit.MINUTES);
@@ -220,6 +221,8 @@ public class uploadProductController {
                 preparedStatement.setString(9, "yes");  // Set pending_status to 0 (assuming not pending)
                 preparedStatement.setString(10, pDetails);
                 preparedStatement.setString(11, fileNameWithoutSpaces);
+
+                preparedStatement.setTimestamp(7, sqlEndTimestamp);
 
                 int rowsAffected = preparedStatement.executeUpdate();
                 System.out.println(rowsAffected + " row(s) inserted.");

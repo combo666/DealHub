@@ -48,6 +48,11 @@ public class adminBidManagementController implements Initializable {
     @FXML
     VBox vBox = new VBox();
 
+
+
+
+
+
     @FXML
     public void setAdminPostBtn(ActionEvent event) throws IOException {
         try {
