@@ -83,6 +83,7 @@ public class communityServerController implements Initializable {
         String jdbcUrl = "jdbc:mysql://localhost:3306/dealhub";
         String username = "root";
         String password = "";
+        String filePath = "server_log.txt";
 
         try {
             socket = new Socket(SERVER_IP, SERVER_PORT);
@@ -91,11 +92,18 @@ public class communityServerController implements Initializable {
             // Start a thread to listen for incoming messages
             Thread messageListener = new Thread(() -> {
                 try (BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
+                    BufferedReader reader = new BufferedReader(new FileReader(filePath));
                     String serverMessage;
+                    StringBuilder content = new StringBuilder();
+                    String line;
                     while ((serverMessage = in.readLine()) != null) {
                         System.out.println(serverMessage + "\n");
-                        massageDisplay.setText(serverMessage);
                     }
+                    while ((line = reader.readLine()) != null) {
+                        content.append(line).append("\n");
+                    }
+                    System.out.println(content);
+                    massageDisplay.setText(content.toString());
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
